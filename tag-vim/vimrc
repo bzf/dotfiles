@@ -1,0 +1,164 @@
+" Vundle configuration --------------------------------------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" My bundles
+Plugin 'endel/vim-github-colorscheme'
+Plugin 'fatih/vim-go'
+Plugin 'joequery/Stupid-EasyMotion'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'christoomey/vim-tmux-runner'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'chrisbra/Colorizer'
+Plugin 'rhysd/vim-crystal'
+Plugin 'raichoo/haskell-vim'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'morhetz/gruvbox'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'mtscout6/vim-cjsx'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'jpalardy/vim-slime'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+
+" Snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
+" Dash (OS X) and Zeal (Linux)
+if has('mac')
+  Plugin 'rizzatti/dash.vim'
+else
+  Plugin 'KabbAmine/zeavim.vim'
+endif
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Basic options ---------------------------------------------------------------
+syntax on
+set background=light
+colorscheme base16-default
+
+set nowrap
+set ruler
+set noswapfile
+set relativenumber
+set number
+set autoindent
+set laststatus=2
+set encoding=utf-8
+set backspace=2
+set lazyredraw
+
+" Always use spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+"   set list
+" set listchars=eol:¬
+
+" Highlight search and jump as you type
+set incsearch
+
+" Line break after 80 characters
+" set textwidth=79
+" set colorcolumn=80
+
+" Add some padding when using zt and zb
+set scrolloff=3
+
+" Saves on make
+set autowrite
+
+" Show trailing whitespace
+" highlight ExtraWhitespace ctermbg=red guibg=red
+" match ExtraWhitespace /\s\+$/
+
+" Plugin options --------------------------------------------------------------
+let g:rspec_command = "Dispatch rspec {spec}"
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b :GoBuild!<CR>
+au FileType go nmap <leader>t :GoTest!<CR>
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+" vim-slime
+let g:slime_target = "tmux"
+
+" Key bindings ---------------------------------------------------------------- 
+let mapleader=" "
+
+" Leader commands -------------------------------------------------------------
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+nmap <leader>ff <C-]>
+nmap <leader>FF g<C-]>
+nmap <leader>dd :call LookupCursorCommand()<CR>
+nmap <leader>w :write<CR>
+nmap <leader>p :Pry<CR>
+
+" Language dependent functions
+nmap <leader>e :call Eval()<CR>
+nmap <leader>i :call Interpretator()<CR>
+nmap <leader>b :call Build()<CR>
+
+" Zoom a window
+nnoremap <leader>- :wincmd _<CR>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
+" vim-tmux-runner
+nnoremap <leader>f :VtrSendLinesToRunner<cr>
+nnoremap <leader>c :VtrSendCommandToRunner<cr>
+nnoremap <leader>oa :VtrAttachToPane<cr>
+nnoremap <leader>or :VtrOpenRunner<cr>
+
+" Rails testing
+nmap <leader>a :call RunAllSpecs()<CR>
+nmap <Leader>s :call RunNearestSpec()<CR>
+nmap <leader>t :call RunCurrentSpecFile()<CR>
+
+" Functions -------------------------------------------------------------------
+function! LookupCursorCommand()
+  if has('mac')
+    :Dash
+  else
+    :Zeavim
+  endif
+endfunction
+
+command! Pry execute 'normal 0Orequire "pry"; binding.pry<esc>j0'
+
+" Auto commands
+autocmd VimResized * :wincmd =
+
+" Settings by filetype --------------------------------------------------------
+autocmd FileType cpp setlocal cino=(0
+autocmd FileType js.cjsx setlocal filetype=coffee
+autocmd FileType jbuilder setlocal filetype=ruby
+autocmd FileType crontab setlocal nobackup nowritebackup

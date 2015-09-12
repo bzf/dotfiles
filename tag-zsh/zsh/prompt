@@ -1,0 +1,6 @@
+# I'm a fan of colors
+autoload -U colors && colors
+setopt PROMPT_SUBST
+
+PROMPT='%{$fg[red]%}%~%{$reset_color%} as %{$fg[blue]%}%n%{$reset_color%} at %{$fg[green]%}%m%{$reset_color%} $(git_prompt)
+ λ '

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Download Vundle.vim
+if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
+# Install all the Vundle packages
+vim +VundleInstall +qa
+
+# Compile YCM
+if [ -e $HOME/.vim/bundle/YouCompleteMe ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  $HOME/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+fi
