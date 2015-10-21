@@ -8,7 +8,9 @@ HISTSIZE=20000
 SAVEHIST=20000
 
 # Add some PATH variables
-export PATH=$HOME/.bin/:/usr/local/bin/:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.bin/:$PATH
+export PATH=$HOME/.cabal/bin/:$PATH
 
 # Sourcing from other files
 source $HOME/.zsh/aliases
@@ -22,3 +24,5 @@ export EDITOR=vim
 # Enable vi-mode
 bindkey -v
 export KEYTIMEOUT=1
+
+eval "$(rbenv init -)"

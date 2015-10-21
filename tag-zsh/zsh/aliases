@@ -12,8 +12,6 @@ fi
 alias dots="cd $HOME/.dotfiles/"
 alias l="ls -lh $LS_COLOR"
 alias la="ls -lAh $LS_COLOR"
-alias tpwd="tmux new -s '`basename $PWD`'"
 alias u='cd ..'
-# alias vim='nvim'
 alias mkdir='mkdir -p'
 alias powr='powder restart'
