@@ -10,38 +10,39 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " My bundles
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chrisbra/Colorizer'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-runner'
 Plugin 'endel/vim-github-colorscheme'
 Plugin 'fatih/vim-go'
 Plugin 'joequery/Stupid-EasyMotion'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'christoomey/vim-tmux-runner'
-Plugin 'kien/ctrlp.vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'chrisbra/Colorizer'
-Plugin 'rhysd/vim-crystal'
-Plugin 'raichoo/haskell-vim'
-Plugin 'wlangstroth/vim-racket'
-Plugin 'morhetz/gruvbox'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'mtscout6/vim-cjsx'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'jpalardy/vim-slime'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'mtscout6/vim-cjsx'
+Plugin 'raichoo/haskell-vim'
+Plugin 'rhysd/vim-crystal'
+Plugin 'rking/ag.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'scrooloose/syntastic'
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'wlangstroth/vim-racket'
 
 " Snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+" Plugin 'MarcWeber/vim-addon-mw-utils'
+" Plugin 'tomtom/tlib_vim'
+" Plugin 'garbas/vim-snipmate'
+" Plugin 'honza/vim-snippets'
 
 " Dash (OS X) and Zeal (Linux)
 if has('mac')
@@ -57,7 +58,7 @@ filetype plugin indent on    " required
 " Basic options ---------------------------------------------------------------
 syntax on
 set background=light
-colorscheme base16-default
+colorscheme solarized
 
 set nowrap
 set ruler
@@ -96,7 +97,7 @@ set autowrite
 " match ExtraWhitespace /\s\+$/
 
 " Plugin options --------------------------------------------------------------
-let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_command = "!docker-compose run web bundle exec rspec {spec}"
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
