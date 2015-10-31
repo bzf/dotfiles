@@ -38,7 +38,6 @@ set relativenumber
 set number
 set autoindent
 set laststatus=2
-set encoding=utf-8
 set backspace=2
 set lazyredraw
 
@@ -62,6 +61,9 @@ nmap <leader>p :Pry<CR>
 nmap <leader>e :call Eval()<CR>
 nmap <leader>i :call Interpretator()<CR>
 nmap <leader>b :call Build()<CR>
+
+" <c-h> is interpreted as <bs> in neovim
+nnoremap <silent> <bs> :TmuxNavigateLeft<cr>
 
 " Functions -------------------------------------------------------------------
 function! LookupCursorCommand()
