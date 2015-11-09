@@ -1,0 +1,24 @@
+[user]
+	name = André Ligné
+
+[core]
+  excludesfile = "~/.gitignore"
+  editor = nvim
+
+[merge]
+  tool = splice
+	ff = true
+
+[alias]
+  lg = log --oneline --decorate --all --graph
+  pr = pull --rebase
+  co = checkout
+
+[push]
+	default = current
+
+[branch]
+	autosetuprebase = always
+
+[init]
+	templatedir = ~/.git_templates
