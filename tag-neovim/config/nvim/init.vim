@@ -8,9 +8,15 @@ Plug 'chrisbra/Colorizer'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'kchmck/vim-coffee-script'
+Plug 'lambdatoast/elm.vim'
+Plug 'jelera/vim-javascript-syntax'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
+
+" vim-cjsx requires
 Plug 'mtscout6/vim-cjsx'
+Plug 'kchmck/vim-coffee-script'
+
 Plug 'raichoo/haskell-vim'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
