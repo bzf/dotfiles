@@ -9,6 +9,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'kchmck/vim-coffee-script'
 Plug 'lambdatoast/elm.vim'
+Plug 'chriskempson/base16-vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -17,9 +18,10 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'mtscout6/vim-cjsx'
 Plug 'kchmck/vim-coffee-script'
 
-Plug 'raichoo/haskell-vim'
+" Plug 'raichoo/haskell-vim'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
+Plug 'vim-scripts/haskell.vim'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-dispatch'
@@ -33,8 +35,10 @@ call plug#end()
 
 " Basic options ---------------------------------------------------------------
 syntax on
-set background=light
-colorscheme solarized
+
+let base16colorspace=256
+set background=dark
+colorscheme base16-tomorrow
 
 set nowrap
 set ruler
