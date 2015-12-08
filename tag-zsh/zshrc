@@ -11,6 +11,7 @@ SAVEHIST=20000
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.bin/:$PATH
 export PATH=$HOME/.cabal/bin/:$PATH
+export PATH=./node_modules/.bin:$PATH
 
 # Sourcing from other files
 source $HOME/.zsh/aliases
@@ -27,3 +28,6 @@ export KEYTIMEOUT=1
 
 eval "$(rbenv init -)"
 eval ~/.bin/base16-tomorrow-dark
+
+export NVM_DIR="/Users/bzf/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
