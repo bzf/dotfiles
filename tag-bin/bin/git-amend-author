@@ -1,0 +1,4 @@
+#!/bin/bash
+# Amends the last commit with the current user
+
+git commit --amend --author "$(git duo)"
