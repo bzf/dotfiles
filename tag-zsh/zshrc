@@ -26,3 +26,4 @@ bindkey -v
 export KEYTIMEOUT=1
 
 eval "$(rbenv init -)"
+eval ~/.bin/base16-tomorrow-dark
