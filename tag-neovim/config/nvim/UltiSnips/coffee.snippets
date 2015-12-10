@@ -1,0 +1,9 @@
+snippet react "Require React and scaffold a new component" b
+React = require "react"
+
+`!p snip.rv = snip.basename` = React.createClass
+	render: ->
+		<h1>Hello world!</h1>
+
+module.exports = `!p snip.rv = snip.basename`
+endsnippet
