@@ -7,3 +7,17 @@ React = require "react"
 
 module.exports = `!p snip.rv = snip.basename`
 endsnippet
+
+snippet req "require" b
+`!p
+def formatVariableName(path):
+	lastPart = path.split('/')[-1]
+	if lastPart == 'lodash':
+		return '_'
+	elif lastPart == 'jquery':
+		return '$'
+	else:
+		return re.sub(r'[_\-]', '', lastPart)
+snip.rv = formatVariableName(t[1])
+` = require "${1}"$0
+endsnippet
