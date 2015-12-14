@@ -1,4 +1,10 @@
 #!/bin/bash
 # Amends the last commit with the current user
+#!/bin/sh
 
-git commit --amend --author "$(git duo)"
+NAME=$(git config user.name)
+EMAIL=`git config user.email`
+
+AUTHOR="$NAME <$EMAIL>"
+
+git commit --amend --author "$AUTHOR"
