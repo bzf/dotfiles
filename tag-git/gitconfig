@@ -22,3 +22,5 @@
 
 [init]
 	templatedir = ~/.git_templates
+[rebase]
+	autosquash = true
