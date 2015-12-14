@@ -7,7 +7,4 @@ if [ ! -e $HOME/.config/nvim/autoload/plug.vim ]; then
 fi
 
 # Install all plugins for neovim
-nvim +PlugInstall
-
-# Create the folder which neovim uses for backup files
-mkdir -p /home/omgbzf/.local/share/nvim/backup
+nvim +PlugInstall +quit
