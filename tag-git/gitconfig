@@ -26,3 +26,5 @@
 	templatedir = ~/.git_templates
 [rebase]
 	autosquash = true
+[remote "origin"]
+	prune = true
