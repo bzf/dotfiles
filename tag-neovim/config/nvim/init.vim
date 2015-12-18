@@ -33,6 +33,13 @@ Plug 'kchmck/vim-coffee-script' | Plug 'mtscout6/vim-cjsx'
 " OMG snippets!
 Plug 'SirVer/ultisnips' | Plug 'ervandew/supertab' | Plug 'honza/vim-snippets'
 
+" Documentation (Dash on OS X, Zeal on Linux)
+if has('mac')
+  Plug 'rizzatti/dash.vim'
+else
+  Plug 'KabbAmine/zeavim.vim'
+endif
+
 call plug#end()
 
 " Basic options ---------------------------------------------------------------
