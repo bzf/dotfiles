@@ -14,16 +14,9 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'lambdatoast/elm.vim'
-
-" vim-cjsx requires
-Plug 'mtscout6/vim-cjsx'
-Plug 'kchmck/vim-coffee-script'
-
-" Plug 'raichoo/haskell-vim'
 Plug 'rking/ag.vim'
-" Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/haskell.vim'
-Plug 'thoughtbot/vim-rspec'
+Plug 'janko-m/vim-test'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-dispatch'
@@ -34,10 +27,11 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 
+" vim-cjsx requires
+Plug 'kchmck/vim-coffee-script' | Plug 'mtscout6/vim-cjsx'
+
 " OMG snippets!
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'ervandew/supertab'
+Plug 'SirVer/ultisnips' | Plug 'ervandew/supertab' | Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -83,6 +77,13 @@ nmap <leader>b :call Build()<CR>
 " <c-h> is interpreted as <bs> in neovim
 nnoremap <silent> <bs> :TmuxNavigateLeft<cr>
 
+" Test bindings
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
 " Plugin options --------------------------------------------------------------
 autocmd! BufWritePost * Neomake
 
@@ -98,6 +99,9 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" Run the tests using `vim-dispatch`
+let test#strategy = "dispatch"
 
 " Functions -------------------------------------------------------------------
 function! LookupCursorCommand()
