@@ -49,6 +49,7 @@ let base16colorspace=256
 set background=dark
 colorscheme base16-tomorrow
 
+set autowrite
 set nowrap
 set ruler
 set noswapfile
