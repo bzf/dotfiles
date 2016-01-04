@@ -13,10 +13,10 @@ export PATH=$HOME/.bin/:$PATH
 export PATH=$HOME/.cabal/bin/:$PATH
 export PATH=./node_modules/.bin:$PATH
 
-# Sourcing from other files
-source $HOME/.zsh/aliases
-source $HOME/.zsh/functions
-source $HOME/.zsh/prompt
+# Source all the stuff from ~/.zsh
+for file in `find ~/.zsh`; do
+  source $file
+done
 
 export LANG=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
