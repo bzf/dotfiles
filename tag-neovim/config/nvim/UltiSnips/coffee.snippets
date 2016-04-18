@@ -8,6 +8,26 @@ React = require "react"
 module.exports = `!p snip.rv = snip.basename`
 endsnippet
 
+snippet store "Require Reflux and scaffold a new store" b
+Reflux = require "reflux"
+
+`!p snip.rv = snip.basename` = Reflux.createStore
+	init: ->
+		@state = {}
+
+	# lifecycle
+
+	# actions
+
+	# public
+	getState: ->
+		@state
+
+	# private
+
+module.exports = `!p snip.rv = snip.basename`
+endsnippet
+
 snippet req "require" b
 `!p
 def formatVariableName(path):
