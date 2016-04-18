@@ -1,31 +1,30 @@
-" vim-plug ---------------------------------------------------------------- 
+" vim-plug ----------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake'
 Plug 'chrisbra/Colorizer'
-Plug 'chriskempson/base16-vim'
-Plug 'christoomey/vim-sort-motion'
+Plug 'christoomey/vim-rfactory'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
+Plug 'janko-m/vim-test'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'lambdatoast/elm.vim'
 Plug 'rking/ag.vim'
-Plug 'vim-scripts/haskell.vim'
-Plug 'janko-m/vim-test'
+Plug 'rust-lang/rust.vim'
 Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
-Plug 'toyamarinyon/vim-swift'
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'vimwiki/vimwiki'
 
 " vim-cjsx requires
 Plug 'kchmck/vim-coffee-script' | Plug 'mtscout6/vim-cjsx'
@@ -45,9 +44,8 @@ call plug#end()
 " Basic options ---------------------------------------------------------------
 syntax on
 
-let base16colorspace=256
-set background=dark
-colorscheme base16-tomorrow
+set background=light
+colorscheme solarized
 
 set autowrite
 set nowrap
@@ -66,7 +64,10 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" Key bindings ---------------------------------------------------------------- 
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
+
+" Key bindings ----------------------------------------------------------------
 let mapleader=' '
 
 " Leader commands -------------------------------------------------------------
@@ -114,6 +115,13 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " Run the tests using `vim-dispatch`
 let test#strategy = "dispatch"
+
+" Change the `vimwiki` leader
+let g:vimwiki_map_prefix = '<Leader>e'
+let wiki = {}
+let wiki.path = '~/vimwiki/'
+let wiki.nested_syntaxes = { 'ruby': 'ruby', 'coffee': 'coffee', 'js': 'js' }
+let g:vimwiki_list = [wiki]
 
 " Functions -------------------------------------------------------------------
 function! LookupCursorCommand()
