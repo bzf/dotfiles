@@ -1,5 +1,6 @@
 [user]
-	name = André Ligné
+  name = André Ligné
+  useconfigonly = true
 
 [core]
   excludesfile = "~/.gitignore"
