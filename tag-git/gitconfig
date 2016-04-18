@@ -8,7 +8,7 @@
 
 [merge]
   tool = splice
-	ff = true
+  ff = true
 
 [alias]
   lg = log --oneline --decorate --all --graph
@@ -16,16 +16,19 @@
   co = checkout
 
 [push]
-	default = current
+  default = current
 
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
+
 [commit]
   template = ~/.gitmessage
 
 [init]
-	templatedir = ~/.git_templates
+  templatedir = ~/.git_templates
+
 [rebase]
-	autosquash = true
+  autosquash = true
+
 [remote "origin"]
-	prune = true
+  prune = true
