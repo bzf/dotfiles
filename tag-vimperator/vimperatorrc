@@ -1,0 +1,3 @@
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+
+autocmd LocationChange reddit\\.com js modes.passAllKeys = true
