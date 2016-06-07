@@ -27,7 +27,6 @@ bindkey -v
 export KEYTIMEOUT=1
 
 eval "$(rbenv init -)"
-eval ~/.bin/base16-tomorrow-dark
 
 export NVM_DIR="/Users/bzf/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
