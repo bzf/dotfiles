@@ -1,19 +1,20 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ManageDocks
+import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig
+import System.IO
 
-main = xmonad =<< xmobar myConfig
-
-myConfig = 
-  defaultConfig
-    { terminal    = myTerminal
-      , modMask     = myModMask
-      , borderWidth = myBorderWidth
-    } `additionalKeysP`
-    [
-      ("M-w M-w", spawn "~/.bin/layout_switch.sh" )
-    ] 
-
-myTerminal    = "urxvt"
-myModMask     = mod4Mask -- Win key or Super_L
-myBorderWidth = 3
+main :: IO ()
+main = do
+    xmproc <- spawnPipe "xmobar"
+    xmonad $ defaultConfig
+        { manageHook = manageDocks <+> manageHook defaultConfig
+        , layoutHook = avoidStruts $ layoutHook defaultConfig
+        , terminal = "urxvt"
+        , borderWidth = 1
+        , logHook = dynamicLogWithPP xmobarPP
+                        { ppOutput = hPutStrLn xmproc
+                        , ppTitle = xmobarColor "green" "" . shorten 50
+                        }
+        } `additionalKeys` []
