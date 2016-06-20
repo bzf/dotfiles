@@ -1,6 +1,5 @@
-#!/bin/bash
-# Amends the last commit with the current user
 #!/bin/sh
+# Amends the last commit with the current user
 
 NAME=$(git config user.name)
 EMAIL=`git config user.email`
