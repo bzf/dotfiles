@@ -1,0 +1,9 @@
+--exclude=.git
+--exclude=node_modules
+--tag-relative=yes
+--recurse=yes
+
+# Define a new language for finding React components written in CJSX
+--langdef=cjsx
+--langmap=cjsx:.cjsx
+--regex-cjsx=/^([^ \t]+)[ \t]=[ \t]React\.createClass$/\1/c,component/
