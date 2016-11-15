@@ -14,7 +14,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'lambdatoast/elm.vim'
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-dispatch'
@@ -121,6 +121,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " rg: use `ripgrep` when searching through files
 if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
   let g:ctrlp_user_command = 'rg %s --files --color=never'
 end
 
