@@ -39,6 +39,10 @@ else
   Plug 'KabbAmine/zeavim.vim'
 endif
 
+" Add a file which can be used to try out new plugins without having to commit
+" them to the repository.
+source ~/.config/nvim/plug-candidates.vim
+
 call plug#end()
 
 " Basic options ---------------------------------------------------------------
