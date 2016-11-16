@@ -2,4 +2,5 @@
 autoload -U colors && colors
 setopt PROMPT_SUBST
 
-PROMPT='[%{$fg[blue]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%} %{$fg[red]%}%~%{$reset_color%}$(git_prompt)]$ '
+PROMPT='[%{$fg[blue]%}%~%{$reset_color%}%{$fg[green]%}$(git_prompt)%{$reset_color%}]
+$ '
