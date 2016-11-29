@@ -3,7 +3,13 @@
 --tag-relative=yes
 --recurse=yes
 
-# Define a new language for finding React components written in CJSX
+--languages=-javascript
+--langdef=js
+--langmap=js:.js
+--langmap=js:+.jsx
+--regex-js=/class[ \t]+([A-Za-z0-9._$]+)[ \t]*/\1/c,class/
+--regex-js=/([A-Za-z$][A-Za-z0-9_$()]+)[ \t]*=[ \t]*[Rr]eact.createClass[ \t]*\(/\1/c,class/
+
 --langdef=cjsx
 --langmap=cjsx:.cjsx
 --regex-cjsx=/^([^ \t]+)[ \t]=[ \t]React\.createClass$/\1/c,component/
