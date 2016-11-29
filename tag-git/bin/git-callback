@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+def log(msg)
+  msg = "[git-callback] #{msg}"
+  puts "\e[35m#{msg}\e[0m"
+end
+
+def install_packages
+  changed_files = `git diff-tree --no-commit-id --name-only HEAD@{1} HEAD`.split
+
+  if changed_files.include? "package.json"
+    log "package.json changed, running yarn"
+    system "yarn check >/dev/null 2>&1 || yarn >/dev/null"
+  end
+
+  if changed_files.include? "Gemfile.lock"
+    log "Gemfile.lock changed, running bundler"
+    system "bundle check >/dev/null || bundle"
+  end
+end
+
+def run_ctags
+  git_directory = `git rev-parse --git-dir`.chomp
+  tags_file_path = "#{git_directory}/tags"
+
+  # Remove the previous `.git/tags` file
+  system "rm -f #{tags_file_path}"
+
+  # Generate a new `.git/tags` file
+  system "git ls-files | ctags --tag-relative -L - -f'#{tags_file_path}'"
+
+  log "Updated ctags index"
+end
+
+install_packages
+run_ctags
