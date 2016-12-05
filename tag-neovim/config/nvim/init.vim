@@ -73,6 +73,9 @@ set list listchars=tab:»·,trail:·
 " https://github.com/neovim/neovim/wiki/FAQ#how-can-i-change-the-cursor-shape-in-the-terminal
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
+" Fix output in Quickfix window with `vim-dispatch`
+set shellpipe+=" "
+
 " Key bindings ----------------------------------------------------------------
 let mapleader=' '
 
