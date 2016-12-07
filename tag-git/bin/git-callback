@@ -9,8 +9,8 @@ def install_packages
   changed_files = `git diff-tree --no-commit-id --name-only HEAD@{1} HEAD`.split
 
   if changed_files.include? "package.json"
-    log "package.json changed, running npm install"
-    system "npm install >/dev/null 2>&1"
+    log "package.json changed, running 'npm install && npm prune'"
+    system "npm install >/dev/null 2>&1 && npm prune >/dev/null 2>&1"
   end
 
   if changed_files.include? "Gemfile.lock"
