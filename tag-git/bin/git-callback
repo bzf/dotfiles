@@ -1,9 +1,38 @@
 #!/usr/bin/ruby
-#!/usr/bin/env ruby
 
 def log(msg)
   msg = "[git-callback] #{msg}"
   puts "\e[35m#{msg}\e[0m"
+end
+
+def install_ruby
+  return unless File.exist?('.ruby-version')
+
+  ruby_version = `cat .ruby-version`.strip
+  version_already_installed = system 'ruby --version >/dev/null'
+
+  return if version_already_installed
+
+  log "Installing missing ruby version '#{ruby_version}'"
+  system "asdf install ruby #{ruby_version}"
+
+  log "Installling gems 'bundler' and 'rails'"
+  system 'gem install bundler rails'
+
+  log "Running 'bundle install'"
+  system 'bundle check >/dev/null || bundle'
+end
+
+def install_nodejs
+  return unless File.exist?('.nvmrc')
+
+  node_version = `cat .nvmrc`.strip
+  version_already_installed = system 'node --version >/dev/null'
+
+  return if version_already_installed
+
+  log "Installing missing nodejs version '#{node_version}'"
+  system "asdf install nodejs #{node_version}"
 end
 
 def install_packages
@@ -33,5 +62,7 @@ def run_ctags
   log "Updated ctags index"
 end
 
+install_ruby
+install_nodejs
 install_packages
 run_ctags
