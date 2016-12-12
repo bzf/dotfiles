@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 #!/usr/bin/env ruby
 
 def log(msg)
