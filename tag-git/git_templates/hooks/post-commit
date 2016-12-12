@@ -1,5 +1,3 @@
 #!/bin/sh
 
-if [ `which git-callback` ]; then
-  git-callback post-commit
-fi
+git-callback post-commit
