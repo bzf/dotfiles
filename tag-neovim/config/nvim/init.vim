@@ -89,6 +89,10 @@ nmap <leader>e :call Eval()<CR>
 nmap <leader>i :call Interpretator()<CR>
 nmap <leader>b :call Build()<CR>
 
+" Gitting
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gc :Gcommit -v
+
 " <c-h> is interpreted as <bs> in neovim
 nnoremap <silent> <bs> :TmuxNavigateLeft<cr>
 
