@@ -2,8 +2,10 @@
 
 function git_prompt {
   if $(git rev-parse --is-inside-work-tree 2>/dev/null); then
-    branch=$(git symbolic-ref HEAD | cut -d'/' -f3- 2>/dev/null)
-    echo " $branch"
+    if $(git symbolic-ref HEAD 2>/dev/null); then
+      branch=$(git symbolic-ref HEAD 2>/dev/null | cut -d'/' -f3- 2>/dev/null)
+      echo " $branch"
+    fi
   fi
 }
 
