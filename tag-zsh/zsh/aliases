@@ -9,11 +9,7 @@ else
   LS_COLOR='-G'
 fi
 
-alias dots="cd $HOME/.dotfiles/"
 alias l="ls -lh $LS_COLOR"
 alias la="ls -lAh $LS_COLOR"
-alias u='cd ..'
-alias mkdir='mkdir -p'
 alias powr='powder restart'
 alias vim='nvim'
-alias dc='docker-compose'
