@@ -79,12 +79,6 @@ let mapleader=' '
 " Leader commands -------------------------------------------------------------
 nmap <leader>dd :call LookupCursorCommand()<CR>
 nmap <leader>w :write<CR>
-nmap <leader>p :Pry<CR>
-
-" Language dependent functions
-nmap <leader>e :call Eval()<CR>
-nmap <leader>i :call Interpretator()<CR>
-nmap <leader>b :call Build()<CR>
 
 " Gitting
 nmap <leader>gs :Gstatus<CR>
