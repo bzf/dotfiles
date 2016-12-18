@@ -1,6 +1,9 @@
 #!/bin/sh
 
 # If we have `brew` available, assume we're on macOS
-if [ `which brew` ]; then
+if [ $(which brew >/dev/null) ]; then
   [ -s $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
+else
+  # This is the path to autojump on Arch Linux, might not work on other distros
+  source /usr/share/autojump/autojump.zsh
 fi
