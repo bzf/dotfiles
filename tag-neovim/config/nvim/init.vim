@@ -23,7 +23,6 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'vimwiki/vimwiki'
 
 " vim-cjsx requires
 Plug 'kchmck/vim-coffee-script' | Plug 'mtscout6/vim-cjsx'
@@ -137,14 +136,6 @@ if executable('rg')
   let g:ackprg = 'rg --vimgrep'
   let g:ctrlp_user_command = 'rg %s --files --color=never'
 end
-
-
-" Change the `vimwiki` leader
-let g:vimwiki_map_prefix = '<Leader>e'
-let wiki = {}
-let wiki.path = '~/vimwiki/'
-let wiki.nested_syntaxes = { 'ruby': 'ruby', 'coffee': 'coffee', 'js': 'js' }
-let g:vimwiki_list = [wiki]
 
 " Functions -------------------------------------------------------------------
 function! LookupCursorCommand()
