@@ -13,3 +13,4 @@
 --langdef=cjsx
 --langmap=cjsx:.cjsx
 --regex-cjsx=/^([^ \t]+)[ \t]=[ \t]React\.createClass$/\1/c,component/
+--regex-cjsx=/([A-Z][^ \t]+)[ \t]=.+[ \t]*->$/\1/c,component/
