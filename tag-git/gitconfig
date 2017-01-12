@@ -12,10 +12,11 @@
   ff = true
 
 [alias]
-  lg = log --oneline --decorate --all --graph
-  pr = pull --rebase
   co = checkout
+  lg = log --oneline --decorate --all --graph
   pf = push --force-with-lease
+  pr = pull --rebase
+  undeployed = !git fetch --multiple origin && git log origin/production..origin/master --oneline
 
 [push]
   default = current
