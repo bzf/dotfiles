@@ -17,5 +17,5 @@
 
 --langdef=scss
 --langmap=scss:.scss
---regex-scss=/^\.([A-Za-z]+).+/\1/c,class/
---regex-scss=/\$([^\s]+):.+/\1/v,variable/
+--regex-scss=/^\.([-_A-Za-z]+)\s?.+/\1/c,class/
+--regex-scss=/(\$[^\s]+):.+/\1/v,variable/

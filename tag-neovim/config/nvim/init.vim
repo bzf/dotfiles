@@ -73,6 +73,10 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " Fix output in Quickfix window with `vim-dispatch`
 set shellpipe+=" "
 
+set isk+=-
+set isk+=_
+set isk+=$
+
 " Key bindings ----------------------------------------------------------------
 let mapleader=' '
 
