@@ -14,3 +14,8 @@
 --langmap=cjsx:.cjsx
 --regex-cjsx=/^([^ \t]+)[ \t]=[ \t]React\.createClass$/\1/c,component/
 --regex-cjsx=/([A-Z][^ \t]+)[ \t]=.+[ \t]*->$/\1/c,component/
+
+--langdef=scss
+--langmap=scss:.scss
+--regex-scss=/^\.([A-Za-z]+).+/\1/c,class/
+--regex-scss=/\$([^\s]+):.+/\1/v,variable/
