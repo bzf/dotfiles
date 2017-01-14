@@ -5,4 +5,6 @@
 
 if [ `uname` = "Darwin" ]; then
   pmset displaysleepnow
+elif [ $(which i3lock 2>/dev/null) ]; then
+  i3lock -c 000000
 fi
