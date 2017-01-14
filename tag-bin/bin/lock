@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# A script for locking your workstation without having to care about menus and
+# clicking.
+
+if [ `uname` = "Darwin" ]; then
+  pmset displaysleepnow
+fi
