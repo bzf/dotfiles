@@ -133,6 +133,13 @@ if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never'
 end
 
+if has('mac')
+  " dash: set up custom search maps
+  let g:dash_map = {
+        \ 'coffee' : ['coffee', 'javascript', 'react', 'lodash'],
+        \ }
+end
+
 " Functions -------------------------------------------------------------------
 function! LookupCursorCommand()
   if has('mac')
