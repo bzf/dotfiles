@@ -99,7 +99,7 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
 " Searching
-nmap <leader>s :Ack 
+nmap <leader>s :Ack! 
 
 " Zooming
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
