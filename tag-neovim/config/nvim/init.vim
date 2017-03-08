@@ -139,6 +139,7 @@ if has('mac')
   " dash: set up custom search maps
   let g:dash_map = {
         \ 'coffee' : ['coffee', 'javascript', 'react', 'lodash'],
+        \ 'scss' : ['sass', 'css', 'bourbon', 'neat'],
         \ }
 end
 
