@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'altercation/vim-colors-solarized'
+Plug 'joshdick/onedark.vim'
 Plug 'benekastah/neomake'
 Plug 'chrisbra/Colorizer'
 Plug 'christoomey/vim-rfactory'
@@ -44,8 +44,11 @@ call plug#end()
 " Basic options ---------------------------------------------------------------
 syntax on
 
-set background=light
-colorscheme solarized
+set background=dark
+if (has("termguicolors"))
+  set termguicolors
+endif
+colorscheme onedark
 
 set autowrite
 set nowrap
