@@ -9,7 +9,6 @@ SAVEHIST=20000
 
 # Add some PATH variables
 export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/.bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 
@@ -17,6 +16,8 @@ export PATH=./node_modules/.bin:$PATH
 for file in `find ~/.zsh`; do
   source $file
 done
+
+export PATH=$HOME/.bin:$PATH
 
 export LANG=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
