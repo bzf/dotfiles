@@ -10,7 +10,6 @@ SAVEHIST=20000
 # Add some PATH variables
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
-export PATH=./node_modules/.bin:$PATH
 
 # Source all the stuff from ~/.zsh
 for file in `find ~/.zsh`; do

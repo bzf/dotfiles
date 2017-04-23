@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Setup nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+
+# Add the yarn path so `yarn global add` command are available in the shell
+export PATH="$PATH:$HOME/.yarn/bin"
+export PATH=./node_modules/.bin:$PATH
