@@ -1,12 +1,10 @@
 #!/usr/bin/env ruby
 
 date = `date +"%H:%M"`[0..-2]
-battery = `battery -t -g black -m black -w red` + " "
 hostname = `hostname`
 
 status = [
   date,
-  battery,
   hostname,
 ]
 
