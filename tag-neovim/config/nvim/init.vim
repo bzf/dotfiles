@@ -7,6 +7,9 @@ function! s:SourceConfigFilesIn(directory)
   endfor
 endfunction
 
+" Key bindings ----------------------------------------------------------------
+let mapleader=' '
+
 " vim-plug ----------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
@@ -88,9 +91,6 @@ set shellpipe+=" "
 set isk+=-
 set isk+=_
 set isk+=$
-
-" Key bindings ----------------------------------------------------------------
-let mapleader=' '
 
 " Leader commands -------------------------------------------------------------
 nmap <leader>dd :call LookupCursorCommand()<CR>
