@@ -1,14 +1,5 @@
 #!/bin/zsh
 
-function git_prompt {
-  if $(git rev-parse --is-inside-work-tree 2>/dev/null); then
-    if $(git symbolic-ref HEAD 2>/dev/null); then
-      branch=$(git symbolic-ref HEAD 2>/dev/null | cut -d'/' -f3- 2>/dev/null)
-      echo " $branch"
-    fi
-  fi
-}
-
 function take {
   if [[ $# == 0 ]]; then
     echo "Usage: take <folder-name>"
