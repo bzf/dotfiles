@@ -92,6 +92,10 @@ set isk+=-
 set isk+=_
 set isk+=$
 
+" Allow local configuration overrides
+set exrc
+set secure
+
 " Leader commands -------------------------------------------------------------
 nmap <leader>dd :call LookupCursorCommand()<CR>
 nmap <leader>w :write<CR>
