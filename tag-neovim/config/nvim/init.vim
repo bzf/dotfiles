@@ -12,6 +12,7 @@ let mapleader=' '
 
 " vim-plug ----------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
+call s:SourceConfigFilesIn('rcplugins')
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'joshdick/onedark.vim'
