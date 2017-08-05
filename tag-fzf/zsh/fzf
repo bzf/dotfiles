@@ -12,7 +12,12 @@ fi
 
 # Key bindings
 # ------------
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+
+if [[ "$(uname)" = "Darwin" ]]; then
+  source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+elif [[ "$(uname)" = "Linux" ]]; then
+  source "/usr/share/fzf/key-bindings.zsh"
+fi
 
 # Directly executing the command (CTRL-X CTRL-R)
 # https://github.com/junegunn/fzf/issues/467
