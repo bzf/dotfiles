@@ -1,4 +1,0 @@
-set hintchars=hjklasdfgyuiopqwertnmzxcvb
-set gui=nonavigation
-
-autocmd LocationChange reddit\\.com js modes.passAllKeys = true
