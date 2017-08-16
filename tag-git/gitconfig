@@ -17,6 +17,7 @@
   pf = push --force-with-lease
   pr = pull --rebase
   undeployed = !git fetch --multiple origin && git log origin/production..origin/master --oneline
+  br = !git for-each-ref --sort=committerdate refs/heads/ --format=' %(HEAD) %(color:green)%(committerdate)%(color:reset) %(color:yellow)%(refname:short)%(color:reset)' | tail -n10
 
 [push]
   default = current
