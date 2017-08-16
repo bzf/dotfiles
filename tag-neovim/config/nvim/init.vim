@@ -30,6 +30,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-rails'
+Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -56,11 +57,12 @@ call plug#end()
 " Basic options ---------------------------------------------------------------
 syntax on
 
-set background=dark
 if (has("termguicolors"))
   set termguicolors
 endif
-colorscheme onedark
+
+let base16colorspace=256
+colorscheme base16-onedark
 
 set autowrite
 set nowrap
