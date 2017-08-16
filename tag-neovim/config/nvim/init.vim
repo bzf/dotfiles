@@ -101,7 +101,6 @@ set secure
 
 " Leader commands -------------------------------------------------------------
 nmap <leader>dd :call LookupCursorCommand()<CR>
-nmap <leader>w :write<CR>
 
 " Gitting
 nmap <leader>gs :Gstatus<CR>
