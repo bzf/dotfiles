@@ -1,8 +1,12 @@
 #!/usr/bin/ruby
 
-def log(msg)
-  msg = "[git-callback] #{msg}"
-  puts "\e[35m#{msg}\e[0m"
+def log_with_duration(message)
+  before = Time.now
+  yield
+  after = Time.now
+
+  duration = ((after - before) * 1000).round(3)
+  puts "\e[35m[git-callback] #{message} (took #{duration} ms)\e[0m"
 end
 
 def run_ctags
@@ -14,8 +18,6 @@ def run_ctags
 
   # Generate a new `.git/tags` file
   system "git ls-files | ctags --tag-relative -L - -f'#{tags_file_path}'"
-
-  log "Updated ctags index"
 end
 
-run_ctags
+log_with_duration("Updated ctags index") { run_ctags }
