@@ -1,7 +1,0 @@
-[submodule "tag-asdf/asdf/plugins/ruby"]
-  path = tag-asdf/asdf/plugins/ruby
-  url = https://github.com/asdf-vm/asdf-ruby.git
-[submodule "tag-asdf/asdf/plugins/nodejs"]
-  path = tag-asdf/asdf/plugins/nodejs
-  url = git@github.com:bzf/asdf-nodejs.git
-  branch = patch-1
