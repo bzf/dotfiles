@@ -29,3 +29,5 @@ export KEYTIMEOUT=1
 # Disable the 'replay' command
 # http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-r
 disable r
+
+ensure_tmux_is_running
