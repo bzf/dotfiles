@@ -57,11 +57,13 @@ call plug#end()
 " Basic options ---------------------------------------------------------------
 syntax on
 
-if (has("termguicolors"))
-  set termguicolors
-endif
+if has('mac')
+  if (has("termguicolors"))
+    set termguicolors
+  endif
 
-let base16colorspace=256
+  let base16colorspace=256
+endif
 colorscheme base16-onedark
 
 set autowrite
