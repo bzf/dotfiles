@@ -21,7 +21,6 @@ Plug 'chrisbra/Colorizer'
 Plug 'christoomey/vim-rfactory'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'janko-m/vim-test'
-Plug 'kchmck/vim-coffee-script'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'rust-lang/rust.vim'
@@ -34,9 +33,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-
-" vim-cjsx requires
-Plug 'kchmck/vim-coffee-script' | Plug 'mtscout6/vim-cjsx'
 
 " OMG snippets!
 Plug 'SirVer/ultisnips' | Plug 'ervandew/supertab' | Plug 'honza/vim-snippets'
@@ -158,7 +154,6 @@ end
 if has('mac')
   " dash: set up custom search maps
   let g:dash_map = {
-        \ 'coffee' : ['coffee', 'javascript', 'react', 'lodash'],
         \ 'scss' : ['sass', 'css', 'bourbon', 'neat'],
         \ }
 end
