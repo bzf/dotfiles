@@ -21,7 +21,6 @@ Plug 'janko-m/vim-test'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-rails'
@@ -78,9 +77,6 @@ set expandtab
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
-" Fix output in Quickfix window with `vim-dispatch`
-set shellpipe+=" "
-
 set isk+=-
 set isk+=_
 set isk+=$
@@ -128,9 +124,6 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" Run the tests using `vim-dispatch`
-let test#strategy = "dispatch"
 
 " ctrlp: ignore some folders when indexing
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
