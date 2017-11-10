@@ -15,22 +15,17 @@ call plug#begin('~/.vim/plugged')
 call s:SourceConfigFilesIn('rcplugins')
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'joshdick/onedark.vim'
 Plug 'benekastah/neomake'
-Plug 'chrisbra/Colorizer'
-Plug 'christoomey/vim-rfactory'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'janko-m/vim-test'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
-Plug 'rust-lang/rust.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-rails'
 Plug 'chriskempson/base16-vim'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 
