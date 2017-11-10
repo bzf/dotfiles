@@ -68,6 +68,7 @@ set laststatus=2
 set backspace=2
 set lazyredraw
 set inccommand=nosplit
+set cursorline
 
 " Always use spaces
 set tabstop=2
