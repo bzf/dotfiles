@@ -17,6 +17,7 @@ call s:SourceConfigFilesIn('rcplugins')
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'benekastah/neomake'
 Plug 'chriskempson/base16-vim'
+Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'janko-m/vim-test'
