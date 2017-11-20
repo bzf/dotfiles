@@ -112,6 +112,9 @@ nmap <leader>s :Ack!
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
+" Rebind exiting insert mode in terminal-mode to <C-o>
+tmap <C-o> <C-\><C-n>
+
 " Plugin options --------------------------------------------------------------
 autocmd! BufWritePost * Neomake
 
