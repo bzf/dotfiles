@@ -1,9 +1,0 @@
-#!/bin/sh
-# Amends the last commit with the current user
-
-NAME=$(git config user.name)
-EMAIL=`git config user.email`
-
-AUTHOR="$NAME <$EMAIL>"
-
-git commit --amend --author "$AUTHOR"
