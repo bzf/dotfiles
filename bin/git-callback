@@ -17,7 +17,7 @@ def run_ctags
   system "rm -f #{tags_file_path}"
 
   # Generate a new `.git/tags` file
-  system "git ls-files | ctags --tag-relative -L - -f'#{tags_file_path}'"
+  system "git ls-files | ctags --tag-relative=yes -L - -f'#{tags_file_path}'"
 end
 
 log_with_duration("Updated ctags index") { run_ctags }
