@@ -15,7 +15,6 @@ call plug#begin('~/.vim/plugged')
 call s:SourceConfigFilesIn('rcplugins')
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'benekastah/neomake'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
@@ -29,6 +28,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'w0rp/ale'
 
 " OMG snippets!
 Plug 'SirVer/ultisnips' | Plug 'ervandew/supertab' | Plug 'honza/vim-snippets'
@@ -116,7 +116,6 @@ nnoremap <leader>= :wincmd =<cr>
 tmap <C-o> <C-\><C-n>
 
 " Plugin options --------------------------------------------------------------
-autocmd! BufWritePost * Neomake
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['ruby', 'haskell', 'javascript', 'python', 'bash=sh']
