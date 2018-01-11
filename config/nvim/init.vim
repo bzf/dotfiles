@@ -116,6 +116,11 @@ nnoremap <leader>= :wincmd =<cr>
 " Rebind exiting insert mode in terminal-mode to <C-o>
 tmap <C-o> <C-\><C-n>
 
+" Copy visual content with Enter to the system register
+if has('clipboard')
+  vnoremap <CR> "+y
+endif
+
 " Plugin options --------------------------------------------------------------
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
