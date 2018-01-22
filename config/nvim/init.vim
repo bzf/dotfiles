@@ -89,6 +89,9 @@ set isk+=$
 set exrc
 set secure
 
+" How many lines to buffer in a :terminal
+set scrollback=100000
+
 " Leader commands -------------------------------------------------------------
 nmap <leader>dd :call LookupCursorCommand()<CR>
 
