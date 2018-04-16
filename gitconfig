@@ -5,6 +5,7 @@
 [core]
   excludesfile = "~/.gitignore"
   editor = nvim
+  pager = "less -S"
 
 [merge]
   tool = splice
