@@ -14,7 +14,6 @@ let mapleader=' '
 call plug#begin('~/.vim/plugged')
 call s:SourceConfigFilesIn('rcplugins')
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
@@ -31,9 +30,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'w0rp/ale'
-
-" OMG snippets!
-Plug 'SirVer/ultisnips' | Plug 'ervandew/supertab' | Plug 'honza/vim-snippets'
 
 " Documentation (Dash on OS X, Zeal on Linux)
 if has('mac')
@@ -93,6 +89,10 @@ set secure
 " How many lines to buffer in a :terminal
 set scrollback=100000
 
+" neovim configration --------------------------------------------------------
+let g:loaded_python_provider = 1
+let g:loaded_python3_provider = 1
+
 " Leader commands -------------------------------------------------------------
 nmap <leader>dd :call LookupCursorCommand()<CR>
 
@@ -129,16 +129,6 @@ endif
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['ruby', 'haskell', 'javascript', 'python', 'bash=sh']
-
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " ctrlp: ignore some folders when indexing
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
