@@ -1,14 +1,5 @@
 #!/bin/zsh
 
-function take {
-  if [[ $# == 0 ]]; then
-    echo "Usage: take <folder-name>"
-  else
-    mkdir -p $1;
-    cd $1;
-  fi
-}
-
 # g() is proudly stolen from thoughtbot/dotfiles
 # No arguments: `git status`
 # With arguments: acts like `git`
