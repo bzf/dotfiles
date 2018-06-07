@@ -17,7 +17,6 @@ call s:SourceConfigFilesIn('rcplugins')
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'janko-m/vim-test'
 Plug 'mileszs/ack.vim'
 Plug 'pbrisbin/vim-mkdir'
