@@ -14,7 +14,7 @@ let mapleader=' '
 call plug#begin('~/.vim/plugged')
 call s:SourceConfigFilesIn('rcplugins')
 
-Plug 'chriskempson/base16-vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'janko-m/vim-test'
@@ -45,15 +45,7 @@ call plug#end()
 
 " Basic options ---------------------------------------------------------------
 syntax on
-
-if has('mac')
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-
-  let base16colorspace=256
-endif
-colorscheme base16-onedark
+colorscheme solarized
 
 set autowrite
 set nowrap
