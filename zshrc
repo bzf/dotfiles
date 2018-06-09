@@ -22,6 +22,8 @@ export LANG=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
 export EDITOR=nvim
 
+[ -r ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+
 # Enable vi-mode
 bindkey -v
 export KEYTIMEOUT=1
