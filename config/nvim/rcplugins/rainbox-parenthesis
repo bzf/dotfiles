@@ -1,7 +1,0 @@
-" vim:ft=vim
-
-Plug 'junegunn/rainbow_parentheses.vim'
-augroup rainbow_lisp
-  autocmd!
-augroup END
-autocmd FileType * RainbowParentheses
