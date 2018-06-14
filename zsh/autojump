@@ -1,7 +1,0 @@
-#!/bin/sh
-
-if [ `uname` = 'Darwin' ]; then
-  source /usr/local/share/autojump/autojump.zsh
-else
-  source /usr/share/autojump/autojump.zsh
-fi

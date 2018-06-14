@@ -1,35 +1,41 @@
-# Enable completion
-autoload -U compinit
-compinit
+for function in ~/.zsh/functions/*; do
+  source $function
+done
 
-# Save a ton of history
+autoload -U colors && colors
+
+setopt promptsubst
+
 HISTFILE=~/.zsh_history
 HISTSIZE=20000
 SAVEHIST=20000
 
-# Add some PATH variables
-export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/.cabal/bin:$PATH
-
-# Source all the stuff from ~/.zsh
-for file in `find ~/.zsh`; do
-  source $file
-done
-
-export PATH=$HOME/.bin:$PATH
-
+export KEYTIMEOUT=1
+export EDITOR=nvim
 export LANG=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
-export EDITOR=nvim
+export PATH=/usr/local/bi:$HOME/.bin:$PATH
+export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
+export PATH=/usr/local/bin:$PATH
 
+alias l="ls -lh $LS_COLOR"
+alias la="ls -lAh $LS_COLOR"
+alias powr='powder restart'
+alias vim='nvim'
+alias ..='cd ..'
+
+[ -r /usr/local/share/autojump/autojump.zsh ] && source /usr/local/share/autojump/autojump.zsh
+[ -r ~/.fzf/shell/key-bindings.zsh ] && source ~/.fzf/shell/key-bindings.zsh
 [ -r ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
 
-# Enable vi-mode
 bindkey -v
-export KEYTIMEOUT=1
 
-# Disable the 'replay' command
-# http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-r
-disable r
+bindkey -M viins '^N' down-line-or-history
+bindkey -M viins '^P' up-line-or-history
+bindkey -M viins '^A' beginning-of-line
+bindkey -M viins '^E' end-of-line
+
+PROMPT='[%{$fg[blue]%}%~%{$reset_color%}%{$fg[green]%}$(git_branch)%{$reset_color%}]
+$ '
 
 ensure_tmux_is_running

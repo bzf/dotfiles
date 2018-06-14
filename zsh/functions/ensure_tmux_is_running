@@ -1,7 +1,7 @@
-#!/bin/zsh
+#!/bin/sh
 
 _not_inside_tmux() {
-  [[ -z "$TMUX" ]]
+  [ -z "$TMUX" ]
 }
 
 ensure_tmux_is_running() {
