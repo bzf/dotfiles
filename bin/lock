@@ -3,8 +3,12 @@
 # A script for locking your workstation without having to care about menus and
 # clicking.
 
-if [ `uname` = "Darwin" ]; then
-  pmset displaysleepnow
-elif [ $(which i3lock 2>/dev/null) ]; then
+if [ "$(uname)" = "Darwin" ]; then
+  # For macOS Sierra and lower
+  /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine 2>/dev/null
+
+  # For macOS High Sierra and higher
+  # /System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
+elif [ "$(which i3lock 2>/dev/null)" ]; then
   i3lock -c 000000
 fi
