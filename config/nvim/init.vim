@@ -140,6 +140,8 @@ if has('mac')
         \ }
 end
 
+let test#ruby#rspec#options = '--format=progress'
+
 " Functions -------------------------------------------------------------------
 function! LookupCursorCommand()
   if has('mac')
