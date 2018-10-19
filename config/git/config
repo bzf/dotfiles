@@ -29,9 +29,6 @@
 [commit]
   template = ~/.gitmessage
 
-[init]
-  templatedir = ~/.git_templates
-
 [rebase]
   autosquash = true
 
