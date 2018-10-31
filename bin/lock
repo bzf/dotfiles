@@ -4,11 +4,14 @@
 # clicking.
 
 if [ "$(uname)" = "Darwin" ]; then
-  # For macOS Sierra and lower
-  /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine 2>/dev/null
+  MACOS_MINOR_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $2}')
 
-  # For macOS High Sierra and higher
-  # /System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
-elif [ "$(which i3lock 2>/dev/null)" ]; then
+  if [ "$MACOS_MINOR_VERSION" -lt 13 ]; then
+    # For macOS Sierra and lower
+    /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine 2>/dev/null
+  else
+    /System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
+  fi
+elif [ "$(command -v i3lock)" ]; then
   i3lock -c 000000
 fi
