@@ -1,0 +1,4 @@
+# vim:ft=sh
+
+[ -r /usr/share/autojump/autojump.bash ] \
+  && . /usr/share/autojump/autojump.bash
