@@ -1,0 +1,1 @@
+text/html; firefox -new-tab %s & sleep 5;
