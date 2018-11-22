@@ -15,10 +15,11 @@ g() {
   fi
 }
 
+FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob !.git/*'
 EDITOR=vim
 PATH=$HOME/.cargo/bin:$HOME/.bin:$HOME/.fzf/bin:$HOME/bin:$PATH
 PS1="$(tput bold)\\h:\\w$(tput sgr0)\$(_current_branch) \$$(tput sgr0) "
-export PATH HOME PS1 EDITOR
+export PATH HOME PS1 EDITOR FZF_DEFAULT_COMMAND
 
 alias la="ls -la"
 alias l="ls -l"
