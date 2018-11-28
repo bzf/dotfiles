@@ -25,6 +25,7 @@ alias la="ls -la"
 alias l="ls -l"
 alias be="bundle exec"
 alias ..="cd .."
+alias vim='nvim'
 
 [ -e ~/.asdf/asdf.sh ] && . "$HOME/.asdf/asdf.sh"
 [ -e ~/.asdf/completions/asdf.bash ] && . "$HOME/.asdf/completions/asdf.bash"
