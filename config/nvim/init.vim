@@ -58,3 +58,5 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <C-p> :Files<CR>
+
+tmap <C-o> <C-\><C-n>
