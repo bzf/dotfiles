@@ -3,7 +3,7 @@
 _current_branch() {
   if git rev-parse --is-inside-work-tree >/dev/null >/dev/null 2>/dev/null; then
     branch=$(git symbolic-ref HEAD 2>/dev/null | cut -d'/' -f3- 2>/dev/null)
-    echo " $(tput sitm)[$branch]$(tput sgr0)"
+    echo " [$branch]"
   fi
 }
 
@@ -18,8 +18,8 @@ g() {
 FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob !.git/*'
 EDITOR=vim
 PATH=$HOME/.cargo/bin:$HOME/.bin:$HOME/.fzf/bin:$HOME/bin:$PATH
-PS1="$(tput bold)\\h:\\w$(tput sgr0)\$(_current_branch) \$$(tput sgr0) "
-export PATH HOME PS1 EDITOR FZF_DEFAULT_COMMAND
+PS1="\\h:\\w\$(_current_branch) \$ "
+export PS1 PATH HOME EDITOR FZF_DEFAULT_COMMAND LC_ALL LANG LC_CTYPE
 
 alias la="ls -la"
 alias l="ls -l"
