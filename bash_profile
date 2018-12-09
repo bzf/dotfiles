@@ -16,7 +16,7 @@ g() {
 }
 
 FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob !.git/*'
-EDITOR=vim
+EDITOR=nvim
 PATH=$HOME/.cargo/bin:$HOME/.bin:$HOME/.fzf/bin:$HOME/bin:$PATH
 PS1="\\h:\\w\$(_current_branch) \$ "
 export PS1 PATH HOME EDITOR FZF_DEFAULT_COMMAND LC_ALL LANG LC_CTYPE
