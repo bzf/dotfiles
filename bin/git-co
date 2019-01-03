@@ -1,7 +1,9 @@
 #!/bin/bash
 
-if [[ $# > 0 ]]; then
-  git-checkout $@
-else
+if [[ $# -gt 0 ]]; then
+  git-checkout "$@"
+elif [[ $(uname) == "Darwin" ]]; then
   git for-each-ref --sort=-committerdate refs/heads/ --format=' %(color:green)%(committerdate)%(color:reset) %(color:yellow)%(refname:short)%(color:reset)' | awk '{print $7}' | fzf --no-sort --height=40% | xargs git checkout
+else
+  git for-each-ref --sort=-committerdate refs/heads/ --format=' %(committerdate) %(refname:short)' | awk '{print $7}' | fzf --no-sort --height=40% | xargs git checkout
 fi
