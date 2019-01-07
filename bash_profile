@@ -15,6 +15,9 @@ g() {
   fi
 }
 
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+LC_CTYPE=en_US.UTF-8
 FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob !.git/*'
 EDITOR=nvim
 PATH=$HOME/.cargo/bin:$HOME/.bin:$HOME/.fzf/bin:$HOME/bin:$PATH
