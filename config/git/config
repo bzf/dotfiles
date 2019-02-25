@@ -23,6 +23,9 @@
 [push]
   default = current
 
+[status]
+  showUntrackedFiles = all
+
 [branch]
   autosetuprebase = always
 
