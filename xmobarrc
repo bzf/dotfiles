@@ -1,0 +1,43 @@
+-- vi: ft=haskell
+
+Config {
+  bgColor = "black",
+  fgColor = "grey",
+  position = TopW L 100,
+  commands = [
+    Run Cpu [
+      "-L", "3",
+      "-H", "50",
+      "--normal", "green",
+      "--high","red"
+    ] 10,
+
+    Run Network "wlp4s0" ["-L","0","-H","32","--normal","green","--high","red"] 10,
+    Run Wireless "wlp4s0" [] 10,
+
+    Run Brightness ["-t", ""] 60,
+
+    Run Memory [
+      "-t","Mem: <used>MB"
+    ] 10,
+
+    Run DateZone "%a %d %b %Y - %H:%M:%S" "fr_FR.UTF-8" "UTC" "date" 10,
+
+    Run Battery [
+      "-t", "<acstatus>: <left>% - <timeleft>",
+      "--",
+      --"-c", "charge_full",
+      "-O", "AC",
+      "-o", "Bat",
+      "-h", "green",
+      "-l", "red"
+    ] 10,
+    Run Com "/bin/bash" ["-c", "echo `xbacklight -get | grep -oE '^.[0-9]{0,3}'`%"]  "mybright" 1,
+
+    Run StdinReader
+  ],
+
+  sepChar = "%",
+  alignSep = "}{",
+  template = "%StdinReader% }{ %wlp4s0wi% | %battery% | %cpu% | %memory% | Lum: %mybright% | <fc=#e6744c>%date%</fc>"
+}
