@@ -3,7 +3,7 @@
   useconfigonly = true
 
 [core]
-  excludesfile = "~/.gitignore"
+  excludesfile = "~/.config/git/ignore"
   editor = nvim
   pager = "less -S"
 
