@@ -30,7 +30,7 @@
   autosetuprebase = always
 
 [commit]
-  template = ~/.gitmessage
+  template = ~/.config/git/message
 
 [rebase]
   autosquash = true
