@@ -36,6 +36,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'sbdchd/neoformat'
 Plug 'sukima/vim-javascript-imports' | Plug 'sukima/vim-ember-imports'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -56,12 +57,13 @@ if executable('rg')
   set grepprg=rg\ --vimgrep
 end
 
+nmap <C-p> :Files<CR>
+nmap <leader>f :Neoformat<CR>
 nmap <leader>gc :Gcommit -v
 nmap <leader>gs :Gstatus<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>t :TestNearest<CR>
-nmap <C-p> :Files<CR>
 
 tmap <C-o> <C-\><C-n>
