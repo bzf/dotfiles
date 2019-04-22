@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 # LICENSE: PUBLIC DOMAIN
 # switch between my layouts
 
