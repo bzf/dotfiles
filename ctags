@@ -10,11 +10,6 @@
 --regex-js=/class[ \t]+([A-Za-z0-9._$]+)[ \t]*/\1/c,class/
 --regex-js=/([A-Za-z$][A-Za-z0-9_$()]+)[ \t]*=[ \t]*[Rr]eact.createClass[ \t]*\(/\1/c,class/
 
---langdef=cjsx
---langmap=cjsx:.cjsx
---regex-cjsx=/^([^ \t]+)[ \t]=[ \t]React\.createClass$/\1/c,component/
---regex-cjsx=/([A-Z][^ \t]+)[ \t]=.+[ \t]*->$/\1/c,component/
-
 --langdef=scss
 --langmap=scss:.scss
 --regex-scss=/^\.([-_A-Za-z]+)\s?.+/\1/c,class/
