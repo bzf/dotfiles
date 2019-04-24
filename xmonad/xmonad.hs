@@ -26,4 +26,7 @@ main = do
     `additionalKeys`  [((mod4Mask, xK_p), spawn "rofi -show run")]
     `additionalKeysP` [ ("<XF86MonBrightnessUp>"  , spawn "xbacklight -inc 5")
                       , ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 5")
+                      , ("<XF86AudioLowerVolume>", spawn "amixer set 'Master' 10%-")
+                      , ("<XF86AudioRaiseVolume>", spawn "amixer set 'Master' 10%+")
+                      , ("<XF86AudioMute>", spawn "amixer set 'Master' toggle")
                       ]
