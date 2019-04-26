@@ -1,11 +1,3 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env bash
 
-date = `date +"%H:%M"`[0..-2]
-hostname = `hostname`
-
-status = [
-  date,
-  hostname,
-]
-
-puts status.join(" | ")
+date +"%H:%M"
