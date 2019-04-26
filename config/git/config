@@ -38,3 +38,6 @@
 
 [remote "origin"]
   prune = true
+
+[blame]
+  date = short
