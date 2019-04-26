@@ -21,7 +21,8 @@ LC_CTYPE=en_US.UTF-8
 FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob !.git/*'
 EDITOR=nvim
 PATH=$HOME/.cargo/bin:$HOME/.bin:$HOME/.local/bin:$HOME/.fzf/bin:$HOME/bin:$PATH
-PS1="\\h:\\w\$(_current_branch) \$ "
+PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(_current_branch) \$ "
+
 export PS1 PATH HOME EDITOR FZF_DEFAULT_COMMAND LC_ALL LANG LC_CTYPE
 
 alias la="ls -la"
