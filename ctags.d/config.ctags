@@ -1,0 +1,5 @@
+--exclude=.git
+--exclude=/node_modules/
+--tag-relative=no
+--recurse=yes
+--verbose=yes

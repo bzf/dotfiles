@@ -1,0 +1,4 @@
+--langdef=scss
+--langmap=scss:+.scss
+--regex-scss=/^\.([-_A-Za-z]+)\s?.+/\1/c,class,classes/
+--regex-scss=/(\$[_A-Za-z-]+):.+/\1/v,variable,variables/
