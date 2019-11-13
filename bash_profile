@@ -32,11 +32,14 @@ alias be="bundle exec"
 alias ..="cd .."
 alias vim='nvim'
 
-[ -e ~/.asdf/asdf.sh ] && . "$HOME/.asdf/asdf.sh"
-[ -e ~/.asdf/completions/asdf.bash ] && . "$HOME/.asdf/completions/asdf.bash"
-
 [ -r "$HOME/.fzf/shell/key-bindings.bash" ] \
   && . "$HOME/.fzf/shell/key-bindings.bash"
 
 PLATFORM_RC="$HOME/.profile.$(uname | awk '{print tolower($0)}')"
 [ -r $PLATFORM_RC ] && . "$PLATFORM_RC"
+
+export VOLTA_HOME="$HOME/.volta"
+[ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
+
+export PATH="$VOLTA_HOME/bin:$PATH"
+eval "$(rbenv init -)"
