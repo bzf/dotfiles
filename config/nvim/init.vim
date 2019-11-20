@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'bzf/vim-concentric-sort-motion'
+Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'janko-m/vim-test'
@@ -50,8 +51,9 @@ Plug 'w0rp/ale'
 
 call plug#end()
 
-silent! colorscheme solarized
-silent! set background=light
+silent! colorscheme base16-default-dark
+silent! set background=dark
+let base16colorspace=256
 
 if executable('rg')
   set grepprg=rg\ --vimgrep
