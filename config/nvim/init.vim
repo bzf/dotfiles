@@ -33,7 +33,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent' | Plug 'christoomey/vim-sort-motion'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'pangloss/vim-javascript'
