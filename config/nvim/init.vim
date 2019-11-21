@@ -59,7 +59,6 @@ if executable('rg')
 end
 
 nmap <C-p> :Files<CR>
-nmap <leader>f :Neoformat<CR>
 nmap <leader>gc :Gcommit -v
 nmap <leader>gs :Gstatus<CR>
 nmap <silent> <leader>T :TestFile<CR>
