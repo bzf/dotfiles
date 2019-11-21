@@ -35,6 +35,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegu
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent' | Plug 'christoomey/vim-sort-motion'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'sukima/vim-javascript-imports' | Plug 'sukima/vim-ember-imports'
@@ -46,7 +47,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'w0rp/ale'
 
 call plug#end()
 
