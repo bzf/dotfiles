@@ -30,6 +30,7 @@ Plug 'bzf/vim-concentric-sort-motion'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent' | Plug 'christoomey/vim-sort-motion'
@@ -49,6 +50,18 @@ Plug 'tpope/vim-vinegar'
 
 call plug#end()
 
+let g:ale_linters = {
+      \ 'javascript': ['eslint']
+      \ }
+
+let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'javascript': ['prettier']
+      \ }
+
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 0
+
 silent! colorscheme base16-default-dark
 silent! set background=dark
 let base16colorspace=256
@@ -60,6 +73,7 @@ end
 nmap <C-p> :Files<CR>
 nmap <leader>gc :Gcommit -v
 nmap <leader>gs :Gstatus<CR>
+nmap <silent> <leader>f :ALEFix<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
