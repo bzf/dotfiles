@@ -1,3 +1,4 @@
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export HOMEBREW_NO_ANALYTICS=1
 
 export PATH=/usr/local/bi:$HOME/.bin:$PATH
