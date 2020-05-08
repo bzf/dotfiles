@@ -60,7 +60,7 @@ let g:ale_fixers = {
       \ }
 
 let g:ale_linters_explicit = 1
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
 
 silent! colorscheme base16-default-dark
 silent! set background=dark
