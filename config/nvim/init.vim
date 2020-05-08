@@ -51,7 +51,7 @@ Plug 'tpope/vim-vinegar'
 call plug#end()
 
 let g:ale_linters = {
-      \ 'javascript': ['eslint']
+      \ 'javascript': ['eslint', 'prettier']
       \ }
 
 let g:ale_fixers = {
