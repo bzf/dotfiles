@@ -82,40 +82,49 @@ font:
 debug:
   render_timer: false
 
-# Base16 Default Dark - alacritty color config
-# Chris Kempson (http://chriskempson.com)
+# Base16 Github 256 - alacritty color config
+# https://github.com/aaron-williamson/base16-alacritty/blob/5166b25c65545333de29763efe8c2b62ba37ed6a/colors/base16-github-256.yml
+# Defman21
 colors:
   # Default colors
   primary:
-    background: '0x181818'
-    foreground: '0xd8d8d8'
+    background: '0xffffff'
+    foreground: '0x333333'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x181818'
-    cursor: '0xd8d8d8'
+    text: '0xffffff'
+    cursor: '0x333333'
 
   # Normal colors
   normal:
-    black:   '0x181818'
-    red:     '0xab4642'
-    green:   '0xa1b56c'
-    yellow:  '0xf7ca88'
-    blue:    '0x7cafc2'
-    magenta: '0xba8baf'
-    cyan:    '0x86c1b9'
-    white:   '0xd8d8d8'
+    black:   '0xffffff'
+    red:     '0xed6a43'
+    green:   '0x183691'
+    yellow:  '0x795da3'
+    blue:    '0x795da3'
+    magenta: '0xa71d5d'
+    cyan:    '0x183691'
+    white:   '0x333333'
 
   # Bright colors
   bright:
-    black:   '0x585858'
-    red:     '0xdc9656'
-    green:   '0x282828'
-    yellow:  '0x383838'
-    blue:    '0xb8b8b8'
-    magenta: '0xe8e8e8'
-    cyan:    '0xa16946'
-    white:   '0xf8f8f8'
+    black:   '0x969896'
+    red:     '0xed6a43'
+    green:   '0x183691'
+    yellow:  '0x795da3'
+    blue:    '0x795da3'
+    magenta: '0xa71d5d'
+    cyan:    '0x183691'
+    white:   '0xffffff'
+
+  indexed_colors:
+    - { index: 16, color: '0x0086b3' }
+    - { index: 17, color: '0x333333' }
+    - { index: 18, color: '0xf5f5f5' }
+    - { index: 19, color: '0xc8c8fa' }
+    - { index: 20, color: '0xe8e8e8' }
+    - { index: 21, color: '0xffffff' }
 
 # Visual Bell
 #
