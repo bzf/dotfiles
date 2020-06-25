@@ -7,9 +7,6 @@
   editor = nvim
   pager = "less -S"
 
-[init]
-  templateDir = "~/.config/git/template/"
-
 [merge]
   tool = splice
   ff = true
