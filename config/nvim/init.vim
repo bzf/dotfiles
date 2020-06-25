@@ -47,6 +47,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'christoomey/vim-tmux-runner'
 
 call plug#end()
 
@@ -80,3 +81,8 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>t :TestNearest<CR>
 
 tmap <C-o> <C-\><C-n>
+
+" vim-tmux-runner
+" https://github.com/christoomey/dotfiles/blob/ea34518fa4d6a03d26d09998fa4486815a2305c0/vim/rcplugins/tmux-runner
+nnoremap <leader>va :VtrAttachToPane<cr>
+noremap <C-f> :VtrSendLinesToRunner<cr>
