@@ -8,7 +8,7 @@
   pager = "less -S"
 
 [init]
-  templatedir = ~/.config/git/template
+  defaultBranch = main
 
 [merge]
   tool = splice
