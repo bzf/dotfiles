@@ -1,0 +1,17 @@
+{
+  "languageserver": {
+    "elmLS": {
+      "command": "~/.volta/bin/elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "elmAnalyseTrigger": "never"
+      }
+    },
+    "ruby": {
+      "command": "solargraph",
+      "filetypes": ["ruby"]
+    }
+  },
+  "codeLens.enable": true
+}
