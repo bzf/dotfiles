@@ -78,6 +78,8 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>t :TestNearest<CR>
 
+nmap <C-]> <Plug>(coc-definition)
+
 tmap <C-o> <C-\><C-n>
 
 " vim-tmux-runner
