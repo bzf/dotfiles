@@ -6,3 +6,4 @@
 (use-package evil :config (evil-mode))
 
 (setq vc-follow-symlinks nil)
+(global-display-line-numbers-mode)
