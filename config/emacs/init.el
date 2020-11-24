@@ -38,3 +38,9 @@
     (setq projectile-project-search-path '("~/Projects")))
   (setq projectile-switch-project-action #'projectile-dired)
   (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file))
+
+(use-package exec-path-from-shell
+  :config (exec-path-from-shell-initialize))
+
+(use-package flycheck
+  :config (global-flycheck-mode))
