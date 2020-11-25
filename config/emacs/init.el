@@ -68,6 +68,10 @@
 
 (use-package magit)
 
+(use-package perspective
+  :config
+  (persp-mode))
+
 (set-face-attribute 'comint-highlight-prompt nil
                     :inherit nil)
 
