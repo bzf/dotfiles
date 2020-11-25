@@ -22,6 +22,16 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(use-package evil-leader
+  :init (global-evil-leader-mode)
+  :config
+  (progn
+    (evil-leader/set-leader "<SPC>")
+    (evil-leader/set-key
+      "gs" 'magit
+      "a" 'projectile-test-project
+      "x" 'execute-extended-command)))
+
 (use-package evil
   :config (evil-mode))
 
@@ -55,4 +65,3 @@
   (let ((inhibit-read-only t))
     (ansi-color-apply-on-region (point-min) (point-max))))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
-
