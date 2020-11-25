@@ -53,6 +53,9 @@
     (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
     (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-page-up)))
 
+(use-package evil-tabs
+  :config (global-evil-tabs-mode t))
+
 (use-package exec-path-from-shell
   :config (exec-path-from-shell-initialize))
 
