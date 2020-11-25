@@ -32,9 +32,6 @@
       "a" 'projectile-test-project
       "x" 'execute-extended-command)))
 
-(use-package evil
-  :config (evil-mode))
-
 (use-package ivy
   :config (ivy-mode 1))
 
@@ -46,8 +43,14 @@
   :init
   (when (file-directory-p "~/Projects")
     (setq projectile-project-search-path '("~/Projects")))
-  (setq projectile-switch-project-action #'projectile-dired)
-  (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file))
+  (setq projectile-switch-project-action #'projectile-dired))
+
+(use-package evil
+  :init (evil-mode)
+  :config
+  (progn
+    (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
+    (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-page-up)))
 
 (use-package exec-path-from-shell
   :config (exec-path-from-shell-initialize))
