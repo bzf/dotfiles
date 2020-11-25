@@ -1,6 +1,9 @@
 (setq vc-follow-symlinks nil)
 (setq inhibit-startup-message t)
 
+(add-to-list 'default-frame-alist '(height . 60))
+(add-to-list 'default-frame-alist '(width . 100)) 
+(set-face-attribute 'default nil :height 140)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (global-display-line-numbers-mode)
