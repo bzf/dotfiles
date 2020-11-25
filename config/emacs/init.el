@@ -1,5 +1,6 @@
 (setq vc-follow-symlinks nil)
 (setq inhibit-startup-message t)
+(setq column-number-mode t)
 
 (add-to-list 'default-frame-alist '(height . 60))
 (add-to-list 'default-frame-alist '(width . 100)) 
