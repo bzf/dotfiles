@@ -30,6 +30,7 @@
     (evil-leader/set-key
       "gs" 'magit
       "a" 'projectile-test-project
+      "A" 'projectile-toggle-between-implementation-and-test
       "x" 'execute-extended-command)))
 
 (use-package ivy
