@@ -50,11 +50,14 @@
     (setq projectile-project-search-path '("~/Projects")))
   (setq projectile-switch-project-action #'projectile-dired))
 
+(use-package evil-nerd-commenter)
+
 (use-package evil
   :init (evil-mode)
   :config
   (progn
     (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
+    (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-operator)
     (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-page-up)))
 
 (use-package evil-tabs
