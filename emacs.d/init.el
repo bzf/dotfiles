@@ -1,6 +1,8 @@
 (setq vc-follow-symlinks nil)
 (setq inhibit-startup-message t)
 (setq column-number-mode t)
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(load custom-file 'noerror)
 
 (add-to-list 'default-frame-alist '(height . 60))
 (add-to-list 'default-frame-alist '(width . 100)) 
