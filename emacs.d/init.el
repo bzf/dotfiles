@@ -35,6 +35,7 @@
       "gs" 'magit
       "a" 'projectile-test-project
       "A" 'projectile-toggle-between-implementation-and-test
+      "ge" (lambda () (interactive) (find-file "~/.emacs.d/init.el"))
       "x" 'execute-extended-command)))
 
 (use-package ivy
