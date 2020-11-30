@@ -66,6 +66,11 @@
 (use-package evil-tabs
   :config (global-evil-tabs-mode t))
 
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
+
 (use-package exec-path-from-shell
   :config (exec-path-from-shell-initialize))
 
