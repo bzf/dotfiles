@@ -1,4 +1,4 @@
-(setq vc-follow-symlinks nil)
+(setq vc-follow-symlinks t)
 (setq inhibit-startup-message t)
 (setq column-number-mode t)
 (setq custom-file (concat user-emacs-directory "custom.el"))
