@@ -61,6 +61,7 @@
   (progn
     (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
     (define-key evil-normal-state-map (kbd "C-s s") 'persp-switch)
+    (define-key evil-normal-state-map (kbd "C-s L") 'persp-switch-last)
     (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-operator)
     (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
     (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
