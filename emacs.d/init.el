@@ -49,16 +49,17 @@
   :config (projectile-mode)
   :custom ((projectile-completion-system 'ivy))
   :bind-keymap
-  ("C-c p" . projectile-command-map)
+  ("C-p" . projectile-command-map)
   :init
-  (when (file-directory-p "~/Projects")
-    (setq projectile-project-search-path '("~/Projects")))
+  (when (file-directory-p "~/src")
+    (setq projectile-project-search-path '("~/src")))
   (setq projectile-switch-project-action #'projectile-dired))
 
 (use-package evil-nerd-commenter)
 
+
 (use-package evil
-  :init (evil-mode)
+  :init (evil-mode 1)
   :config
   (progn
     (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
@@ -81,15 +82,19 @@
   :config
   (global-evil-surround-mode 1))
 
-(use-package evil-magit)
-
 (use-package exec-path-from-shell
   :config (exec-path-from-shell-initialize))
 
 (use-package flycheck
   :config (global-flycheck-mode))
 
-(use-package magit)
+(use-package evil-magit)
+(add-hook 'magit-mode-hook 'evil-local-mode)
+(add-hook 'git-rebase-mode-hook 'evil-local-mode)
+
+(use-package magit
+  :config
+  (require 'evil-magit))
 
 (use-package perspective
   :config
