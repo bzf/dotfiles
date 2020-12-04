@@ -65,6 +65,8 @@
     (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
     (define-key evil-normal-state-map (kbd "C-s s") 'persp-switch)
     (define-key evil-normal-state-map (kbd "C-s L") 'persp-switch-last)
+    (define-key evil-normal-state-map (kbd "C-s \\") 'evil-window-vsplit)
+    (define-key evil-normal-state-map (kbd "C-s -") 'evil-window-split)
     (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
     (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
     (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
