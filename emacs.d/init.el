@@ -6,6 +6,11 @@
 
 (load custom-file 'noerror)
 
+(setq-default indent-tabs-mode nil)
+(setq backup-directory-alist '((".*" . "~/.Trash")))
+(setq create-lockfiles nil)
+(setq indent-tabs-mode nil)
+(setq-default default-tab-width 2)
 (add-to-list 'default-frame-alist '(height . 60))
 (add-to-list 'default-frame-alist '(width . 100)) 
 (set-face-attribute 'default nil :height 140)
