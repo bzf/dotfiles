@@ -79,6 +79,10 @@
     (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
     (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-page-up)))
 
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
 
 (use-package evil-surround
   :ensure t
