@@ -53,8 +53,6 @@
 (use-package projectile
   :config (projectile-mode)
   :custom ((projectile-completion-system 'ivy))
-  :bind-keymap
-  ("C-p" . projectile-command-map)
   :init
   (when (file-directory-p "~/src")
     (setq projectile-project-search-path '("~/src")))
