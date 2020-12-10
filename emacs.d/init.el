@@ -79,8 +79,6 @@
     (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
     (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-page-up)))
 
-(use-package evil-tabs
-  :config (global-evil-tabs-mode t))
 
 (use-package evil-surround
   :ensure t
