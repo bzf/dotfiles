@@ -52,12 +52,18 @@ Plug 'christoomey/vim-tmux-runner'
 call plug#end()
 
 let g:ale_linters = {
-      \ 'javascript': ['eslint', 'prettier']
+      \ 'javascript': ['eslint', 'prettier'],
+      \ 'ruby': ['rubocop'],
+      \ 'handlebars': ['embertemplatelint'],
+      \ 'rust': ['cargo'],
+      \ 'sh': ['shellcheck']
       \ }
 
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'javascript': ['prettier']
+      \ 'javascript': ['prettier'],
+      \ 'rust': ['rustfmt'],
+      \ 'handlebars': ['prettier']
       \ }
 
 let g:ale_linters_explicit = 1
