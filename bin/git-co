@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [[ $# -gt 0 ]]; then
+if [[ $1 == "main" || $1 == "master" ]]; then
+  git branch | grep -E 'main|master' | cut -c 3- | xargs git checkout
+elif [[ $# -gt 0 ]]; then
   git-checkout "$@"
 elif [[ $(uname) == "Darwin" ]]; then
   git for-each-ref --sort=-committerdate refs/heads/ --format=' %(color:green)%(committerdate)%(color:reset) %(color:yellow)%(refname:short)%(color:reset)' | awk '{print $7}' | fzf --no-sort --height=40% | xargs git checkout
