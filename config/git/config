@@ -18,7 +18,6 @@
   pf = push --force-with-lease
   pr = pull --rebase
   undeployed = !git fetch --multiple origin && git log origin/production..origin/master --oneline
-  rb = !git fetch origin && git rebase origin/master
   amend-author = commit --reset-author --amend --no-edit
   cloc = !cloc --vcs git
 
