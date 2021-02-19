@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+git fetch origin && git rebase -i origin/"$(git branch | grep -oE '^.{2}(main|master)$' | grep -oE 'main|master')"
