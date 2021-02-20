@@ -14,8 +14,4 @@ alias ..='cd ..'
 alias be='bundle exec'
 alias dc='docker-compose'
 
-setopt promptsubst
-PROMPT='[%{$fg[blue]%}%~%{$reset_color%}%{$fg[green]%}$(_current_branch)%{$reset_color%}]
-$ '
-
 ensure_tmux_is_running
