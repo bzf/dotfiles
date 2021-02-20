@@ -20,6 +20,7 @@ set secure
 set shiftwidth=2
 set tabstop=2
 set tags=.git/tags
+set termguicolors
 
 let mapleader = "\<Space>"
 
