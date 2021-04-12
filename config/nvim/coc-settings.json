@@ -11,6 +11,11 @@
     "ruby": {
       "command": "solargraph",
       "filetypes": ["ruby"]
+    },
+    "rust-analyzer": {
+      "enable": true,
+      "command": "rust-analyzer",
+      "filetypes": ["rust"]
     }
   },
   "codeLens.enable": true
