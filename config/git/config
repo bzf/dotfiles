@@ -5,6 +5,7 @@
 [core]
   excludesfile = "~/.config/git/ignore"
   pager = "less -S"
+  editor = nvim
 
 [init]
   defaultBranch = main
