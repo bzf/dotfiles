@@ -22,6 +22,8 @@ set tabstop=2
 set tags=.git/tags
 set termguicolors
 
+set rtp+=/usr/local/opt/fzf
+
 let mapleader = "\<Space>"
 
 call plug#begin('~/.vim/plugged')
@@ -33,7 +35,7 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent' | Plug 'christoomey/vim-sort-motion'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
