@@ -52,13 +52,16 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'christoomey/vim-tmux-runner'
 
+Plug 'jparise/vim-graphql'
+Plug 'cespare/vim-toml'
+
 call plug#end()
 
 let g:ale_linters = {
       \ 'javascript': ['eslint', 'prettier'],
       \ 'ruby': ['rubocop'],
       \ 'handlebars': ['embertemplatelint'],
-      \ 'rust': ['cargo'],
+      \ 'rust': ['clippy'],
       \ 'sh': ['shellcheck']
       \ }
 
