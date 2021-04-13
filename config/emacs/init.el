@@ -10,6 +10,10 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
+; Set up customise
+(setq custom-file "~/.config/emacs/custom.el")
+(load custom-file)
+
 (use-package evil
   :ensure t
   :config (evil-mode 1))
