@@ -1,4 +1,5 @@
 (setq vc-follow-symlinks nil)
+(setq create-lockfiles nil)
 
 ;; Set up package.el to work with MELPA
 (require 'package)
