@@ -23,3 +23,10 @@
 (use-package evil
   :ensure t
   :config (evil-mode 1))
+
+(use-package base16-theme
+  :ensure t
+  :init
+  (setq base16-theme-256-color-source 'base16-shell)
+  :config
+  (load-theme 'base16-tomorrow-night t))
