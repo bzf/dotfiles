@@ -1,10 +1,11 @@
 ;; Set up package.el to work with MELPA
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+	     '("melpa" . "https://melpa.org/packages/"))
 
 (package-initialize)
-(package-refresh-contents)
+(if (not package-archive-contents)
+  (package-refresh-contents))
 
 ;; Download Evil
 (unless (package-installed-p 'evil)
