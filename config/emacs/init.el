@@ -32,11 +32,25 @@
 
 (use-package evil
   :ensure t
-  :config (evil-mode 1))
+  :config
+  (progn
+    (evil-mode 1)
+    (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-operator)))
+
+(use-package evil-surround
+  :after evil
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
+
+(use-package evil-nerd-commenter
+  :after evil
+  :ensure t
+  :config (evilnc-default-hotkeys))
 
 (use-package base16-theme
   :ensure t
   :init
   (setq base16-theme-256-color-source 'base16-shell)
   :config
-  (load-theme 'base16-tomorrow-night t))
+  (load-theme 'base16-tomorrow-night))
