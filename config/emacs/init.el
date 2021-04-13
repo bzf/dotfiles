@@ -1,6 +1,9 @@
 (setq vc-follow-symlinks nil)
 (setq create-lockfiles nil)
 
+(menu-bar-mode 0)
+(global-display-line-numbers-mode)
+
 ;; Set up package.el to work with MELPA
 (require 'package)
 (add-to-list 'package-archives
