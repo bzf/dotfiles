@@ -20,6 +20,16 @@
 (setq custom-file "~/.config/emacs/custom.el")
 (load custom-file)
 
+(use-package evil-leader
+  :ensure t
+  :init
+  (global-evil-leader-mode)
+  :config
+  (progn
+    (evil-leader/set-leader "<SPC>")
+    (evil-leader/set-key
+      "x" 'execute-extended-command)))
+
 (use-package evil
   :ensure t
   :config (evil-mode 1))
