@@ -28,7 +28,6 @@ let mapleader = "\<Space>"
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'altercation/vim-colors-solarized'
 Plug 'bzf/vim-concentric-sort-motion'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-sort-motion'
@@ -75,7 +74,10 @@ let g:ale_fixers = {
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 
-silent! colorscheme base16-tomorrow-night
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 if executable('rg')
   set grepprg=rg\ --vimgrep

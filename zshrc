@@ -14,4 +14,6 @@ alias ..='cd ..'
 alias be='bundle exec'
 alias dc='docker-compose'
 
+base16_tomorrow-night
+
 ensure_tmux_is_running
