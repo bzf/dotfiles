@@ -48,6 +48,10 @@
   :ensure t
   :config (evilnc-default-hotkeys))
 
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
 (use-package base16-theme
   :ensure t
   :init
