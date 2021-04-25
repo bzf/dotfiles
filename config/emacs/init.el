@@ -52,6 +52,18 @@
   :ensure t
   :init (global-flycheck-mode))
 
+(use-package helm
+  :ensure t)
+
+(use-package projectile
+  :ensure t
+  :init (setq projectile-project-search-path '("~/Projects/" "~/Projects/gql-metrics/"))
+  :config (projectile-mode))
+
+(use-package helm-projectile
+  :ensure t
+  :config (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile))
+
 (use-package base16-theme
   :ensure t
   :init
