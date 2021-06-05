@@ -51,11 +51,45 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'neovim/nvim-lspconfig'
 
 Plug 'jparise/vim-graphql'
 Plug 'cespare/vim-toml'
 
 call plug#end()
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "rust", "ruby", "javascript", "typescript", "css", "scss" },
+  ignore_install = {},
+  highlight = {
+    enable = true,
+  },
+}
+EOF
+
+lua << EOF
+local nvim_lsp = require('lspconfig')
+
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  local opts = { noremap=true, silent=true }
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+end
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = { "solargraph", "rust_analyzer", "tsserver" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup { on_attach = on_attach }
+end
+EOF
 
 let g:ale_linters = {
       \ 'javascript': ['eslint', 'prettier'],
