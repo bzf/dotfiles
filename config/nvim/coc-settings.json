@@ -16,6 +16,11 @@
       "enable": true,
       "command": "rust-analyzer",
       "filetypes": ["rust"]
+    },
+    "tsserver": {
+      "enable": true,
+      "command": "tsserver",
+      "filetypes": ["javascript", "typescript"]
     }
   },
   "codeLens.enable": true
