@@ -13,6 +13,7 @@ alias vim='nvim'
 alias ..='cd ..'
 alias be='bundle exec'
 alias dc='docker-compose'
+alias k='kubectl'
 
 base16_tomorrow-night
 
