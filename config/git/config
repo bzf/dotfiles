@@ -18,6 +18,7 @@
   lg = log --oneline --decorate --all --graph
   pf = push --force-with-lease
   pr = pull --rebase
+  cp = cherry-pick
   undeployed = !git fetch --multiple origin && git log origin/production..origin/master --oneline
   amend-author = commit --reset-author --amend --no-edit
   cloc = !cloc --vcs git
