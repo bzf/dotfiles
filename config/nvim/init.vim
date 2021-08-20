@@ -52,6 +52,7 @@ EOF
 
 let g:ale_linters = {
       \ 'javascript': ['eslint', 'prettier'],
+      \ 'typescript': ['tslint'],
       \ 'ruby': ['rubocop'],
       \ 'handlebars': ['embertemplatelint'],
       \ 'rust': ['clippy'],
@@ -86,8 +87,19 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> K :call show_documentation()<CR>
 
-nmap <C-]> <Plug>(coc-definition)
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" nmap <C-]> <Plug>(coc-definition)
 
 tmap <C-o> <C-\><C-n>
 
