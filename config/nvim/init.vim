@@ -26,7 +26,48 @@ set rtp+=/usr/local/opt/fzf
 
 let mapleader = "\<Space>"
 
-lua require('plugins')
+call plug#begin('~/.vim/plugged')
+
+Plug 'bzf/vim-concentric-sort-motion'
+Plug 'chriskempson/base16-vim'
+Plug 'christoomey/vim-sort-motion'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'dense-analysis/ale'
+Plug 'janko-m/vim-test'
+Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent' | Plug 'christoomey/vim-sort-motion'
+Plug 'mattn/emmet-vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'pangloss/vim-javascript'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'sukima/vim-javascript-imports' | Plug 'sukima/vim-ember-imports'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'neovim/nvim-lspconfig'
+
+Plug 'jparise/vim-graphql'
+Plug 'cespare/vim-toml'
+
+call plug#end()
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "rust", "ruby", "javascript", "typescript", "css", "scss" },
+  ignore_install = {},
+  highlight = {
+    enable = true,
+  },
+}
+EOF
 
 lua << EOF
 local nvim_lsp = require('lspconfig')
