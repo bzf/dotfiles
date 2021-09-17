@@ -1,5 +1,4 @@
 filetype plugin indent on
-syntax enable
 
 set autoindent
 set autowrite
@@ -20,7 +19,6 @@ set secure
 set shiftwidth=2
 set tabstop=2
 set tags=.git/tags
-set termguicolors
 
 set rtp+=/usr/local/opt/fzf
 
@@ -29,7 +27,6 @@ let mapleader = "\<Space>"
 call plug#begin('~/.vim/plugged')
 
 Plug 'bzf/vim-concentric-sort-motion'
-Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
@@ -37,6 +34,7 @@ Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent' | Plug 'christoomey/vim-sort-motion'
+Plug 'joshdick/onedark.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -111,10 +109,26 @@ let g:ale_fixers = {
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
+let g:onedark_termcolors=16
+
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
 endif
+
+syntax on
+colorscheme onedark
 
 if executable('rg')
   set grepprg=rg\ --vimgrep
