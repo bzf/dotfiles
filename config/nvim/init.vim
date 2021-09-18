@@ -29,13 +29,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'bzf/vim-concentric-sort-motion'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
 Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent' | Plug 'christoomey/vim-sort-motion'
 Plug 'joshdick/onedark.vim'
-Plug 'mattn/emmet-vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
@@ -144,8 +142,3 @@ nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> K :call show_documentation()<CR>
 
 tmap <C-o> <C-\><C-n>
-
-" vim-tmux-runner
-" https://github.com/christoomey/dotfiles/blob/ea34518fa4d6a03d26d09998fa4486815a2305c0/vim/rcplugins/tmux-runner
-nnoremap <leader>va :VtrAttachToPane<cr>
-noremap <C-f> :VtrSendLinesToRunner<cr>
