@@ -27,13 +27,17 @@ let mapleader = "\<Space>"
 call plug#begin('~/.vim/plugged')
 
 Plug 'bzf/vim-concentric-sort-motion'
+Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'janko-m/vim-test'
+Plug 'joshdick/onedark.vim'
+Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent' | Plug 'christoomey/vim-sort-motion'
-Plug 'joshdick/onedark.vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'sukima/vim-javascript-imports' | Plug 'sukima/vim-ember-imports'
@@ -45,11 +49,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'neovim/nvim-lspconfig'
-
-Plug 'jparise/vim-graphql'
-Plug 'cespare/vim-toml'
 
 call plug#end()
 
