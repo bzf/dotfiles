@@ -29,7 +29,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'bzf/vim-concentric-sort-motion'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'dense-analysis/ale'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent' | Plug 'christoomey/vim-sort-motion'
@@ -86,26 +85,6 @@ for _, lsp in ipairs(servers) do
 end
 EOF
 
-let g:ale_linters = {
-      \ 'javascript': ['eslint', 'prettier'],
-      \ 'typescript': ['tslint'],
-      \ 'ruby': ['rubocop'],
-      \ 'handlebars': ['embertemplatelint'],
-      \ 'rust': ['clippy'],
-      \ 'sh': ['shellcheck']
-      \ }
-
-let g:ale_fixers = {
-      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'javascript': ['prettier'],
-      \ 'typescript': ['prettier'],
-      \ 'rust': ['rustfmt'],
-      \ 'handlebars': ['prettier']
-      \ }
-
-let g:ale_linters_explicit = 1
-let g:ale_fix_on_save = 1
-
 let g:onedark_termcolors=16
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -134,7 +113,6 @@ end
 nmap <C-p> :Files<CR>
 nmap <leader>gc :Gcommit -v
 nmap <leader>gs :Gstatus<CR>
-nmap <silent> <leader>f :ALEFix<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
