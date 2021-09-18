@@ -37,7 +37,6 @@ Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent' | Plug 'christoome
 Plug 'joshdick/onedark.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'pangloss/vim-javascript'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'sukima/vim-javascript-imports' | Plug 'sukima/vim-ember-imports'
@@ -143,18 +142,6 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> K :call show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-" nmap <C-]> <Plug>(coc-definition)
 
 tmap <C-o> <C-\><C-n>
 
