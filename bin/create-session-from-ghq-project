@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# set -e
+set -x
+
+SELECTED_PROJECT_PATH=$(find ~/ghq -type d -maxdepth 3 -mindepth 3 | fzf)
+SESSION_NAME=$(echo $SELECTED_PROJECT_PATH | awk -F '/' '{print $NF}')
+
+echo $SELECTED_PROJECT_PATH
+echo $SESSION_NAME
+
+tmux has-session -t $SESSION_NAME
+
+if [ $? != 0 ]; then
+  tmux new-session -d -s $SESSION_NAME -c $SELECTED_PROJECT_PATH
+fi
+
+tmux switch-client -t $SESSION_NAME
