@@ -8,11 +8,8 @@ done
 
 alias l="ls -lh $LS_COLOR"
 alias la="ls -lAh $LS_COLOR"
-alias powr='powder restart'
 alias vim='nvim'
 alias ..='cd ..'
 alias be='bundle exec'
-alias dc='docker-compose'
-alias k='kubectl'
 
 ensure_tmux_is_running
