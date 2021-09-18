@@ -143,4 +143,8 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>t :TestNearest<CR>
 
+vmap <silent> <leader>y "*y
+nmap <silent> <leader>y "*Y
+nmap <silent> <leader>p "*p
+
 tmap <C-o> <C-\><C-n>
