@@ -157,8 +157,7 @@ if executable('rg')
 end
 
 nmap <C-p> :Files<CR>
-nmap <leader>gc :Gcommit -v
-nmap <leader>gs :Gstatus<CR>
+nmap <leader>gs :Git<CR>
 nmap <silent> <leader>f :ALEFix<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
