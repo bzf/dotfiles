@@ -35,6 +35,14 @@ return require('packer').startup(function()
   use 'tpope/vim-unimpaired'
 
   use {
+    'nvim-telescope/telescope.nvim',
+    requires = { { 'nvim-lua/plenary.nvim' }},
+    config = function()
+      vim.api.nvim_set_keymap('n', '<C-p>', [[<cmd>lua require('telescope.builtin').git_files()<CR>]], { noremap = true, silent = true })
+    end
+  }
+
+  use {
     'tpope/vim-fugitive', 
     config = function()
       vim.api.nvim_set_keymap('n', '<leader>gs', ':Git<CR>', { noremap = true, silent = true })
