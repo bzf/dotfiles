@@ -1,5 +1,6 @@
 vim.g.mapleader = ' '
 
+vim.opt.wrap = false
 vim.opt.autowrite = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
