@@ -1,3 +1,5 @@
+bindkey -e
+
 alias vim='nvim'
 
 export PS1='%~ $ '
