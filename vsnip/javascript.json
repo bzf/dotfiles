@@ -1,0 +1,14 @@
+{
+  "StimulusController": {
+    "prefix": ["controller"],
+    "body": [
+      "import { Controller } from \"@hotwired/stimulus\";",
+      "",
+      "export default class extends Controller {",
+      "\tconnect() {",
+      "\t\tconsole.log('hello world');$0",
+      "\t}",
+      "}"
+    ]
+  }
+}

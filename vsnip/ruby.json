@@ -1,0 +1,32 @@
+{
+  "ViewComponent": {
+    "prefix": ["component"],
+    "body": [
+      "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} < ViewComponent::Base",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Controller": {
+    "prefix": ["controller"],
+    "body": [
+      "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} < ApplicationController",
+      "\t$0",
+      "end"
+    ]
+  },
+  "require_login": {
+    "prefix": ["balogin"],
+    "body": [
+      "before_action :require_login",
+      "$0"
+    ]
+  },
+  "#initialize": {
+    "prefix": ["defi"],
+    "body": [
+      "def initialize($0)",
+      "end"
+    ]
+  }
+}
