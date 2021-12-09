@@ -1,5 +1,6 @@
 vim.g.mapleader = ' '
 
+vim.opt.grepprg = "rg --vimgrep"
 vim.opt.wrap = false
 vim.opt.autowrite = true
 vim.opt.expandtab = true
