@@ -1,3 +1,6 @@
+autoload -U compinit
+compinit
+
 HISTFILE=~/.zsh_history
 HISTSIZE=20000
 SAVEHIST=20000
@@ -8,6 +11,8 @@ alias ..='cd ..'
 alias vim='nvim'
 
 export PS1='%~ $ '
+
+compdef g=git
 
 function g() {
 	if [ "$#" -eq 0 ]; then
