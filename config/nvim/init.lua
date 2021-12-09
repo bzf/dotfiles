@@ -54,6 +54,7 @@ require('packer').startup(function()
     requires = { { 'nvim-lua/plenary.nvim' }},
     config = function()
       vim.api.nvim_set_keymap('n', '<C-p>', [[<cmd>lua require('telescope.builtin').git_files()<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>fg', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
 
       function find_dotfile()
         require("telescope.builtin").find_files({
