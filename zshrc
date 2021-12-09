@@ -24,3 +24,11 @@ elif read -q "REPLY?rbenv is missing. Install now? [y/N] "; then
   mkdir -p "$(rbenv root)"/plugins
   git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 fi
+
+if [ -d "$HOME/.volta/" ]; then
+  export PATH="$PATH:$HOME/.volta/bin"
+elif read -q "REPLY?volta is missing. Install now? [y/N] "; then
+  echo ''
+  curl https://get.volta.sh | bash -s -- --skip-setup
+  export PATH="$PATH:$HOME/.volta/bin"
+fi
