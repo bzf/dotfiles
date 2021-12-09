@@ -33,6 +33,7 @@ return require('packer').startup(function()
 
   use 'tpope/vim-surround'
   use 'tpope/vim-unimpaired'
+  use 'tpope/vim-vinegar'
   use 'pbrisbin/vim-mkdir'
 
   use {
