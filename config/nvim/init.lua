@@ -6,8 +6,6 @@ vim.opt.shiftwidth = 2
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.api.nvim_set_keymap('n', '<leader>ve', ':edit $HOME/.config/nvim/init.lua<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>vE', ':tabedit $HOME/.config/nvim/init.lua<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>vs', ':source $HOME/.config/nvim/init.lua<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>w', ':write<CR>', { noremap = true, silent = true })
@@ -48,7 +46,7 @@ require('packer').startup(function()
         })
       end
 
-      vim.api.nvim_set_keymap('n', '<leader>td', [[<cmd>lua find_dotfile()<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>ve', [[<cmd>lua find_dotfile()<CR>]], { noremap = true, silent = true })
     end
   }
 
