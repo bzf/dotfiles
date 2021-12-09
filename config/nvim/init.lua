@@ -41,6 +41,13 @@ require('packer').startup(function()
   }
 
   use {
+    'kana/vim-textobj-indent',
+    requires = {
+      { 'kana/vim-textobj-user' },
+    },
+  }
+
+  use {
     'nvim-telescope/telescope.nvim',
     requires = { { 'nvim-lua/plenary.nvim' }},
     config = function()
