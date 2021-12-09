@@ -46,6 +46,14 @@ elif read -q "REPLY?fzf is missing. Install now? [y/N] "; then
   source "$HOME/.fzf/shell/key-bindings.zsh"
 fi
 
+if [ -d "$HOME/.cargo/" ]; then
+  source $HOME/.cargo/env
+elif read -q "REPLY?cargo is missing. Install now? [y/N] "; then
+  echo ''
+  curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
+  source $HOME/.cargo/env
+fi
+
 if [ -f "/usr/share/autojump/autojump.sh" ]; then
    source /usr/share/autojump/autojump.sh
 fi
