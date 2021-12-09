@@ -10,3 +10,6 @@ pr = pull --rebase
 
 [push]
 default = current
+
+[rebase]
+autoStash = true
