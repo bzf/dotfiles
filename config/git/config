@@ -1,0 +1,9 @@
+[user]
+name = André Ligné
+
+[init]
+defaultBranch = main
+
+[alias]
+pf = push --force-with-lease
+pr = pull --rebase
