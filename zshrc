@@ -64,5 +64,7 @@ elif read -q "REPLY?starship is missing. Install now? [y/N] "; then
 fi
 
 if [ -f "/usr/share/autojump/autojump.sh" ]; then
-   source /usr/share/autojump/autojump.sh
+  source /usr/share/autojump/autojump.sh
+elif   [ -f /usr/local/etc/profile.d/autojump.sh ]; then
+  source /usr/local/etc/profile.d/autojump.sh
 fi
