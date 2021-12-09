@@ -9,6 +9,12 @@ bindkey -e
 
 alias ..='cd ..'
 alias vim='nvim'
+alias r="$(rbenv which rails)"
+
+function rails() {
+  echo "----> Use 'r' instead!"
+  "$(rbenv which rails)" "$@"
+}
 
 export PS1='%~ $ '
 
@@ -73,3 +79,4 @@ if [ -f "/usr/share/autojump/autojump.sh" ]; then
 elif   [ -f /usr/local/etc/profile.d/autojump.sh ]; then
   source /usr/local/etc/profile.d/autojump.sh
 fi
+
