@@ -26,7 +26,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   })
 end
 
-return require('packer').startup(function()
+require('packer').startup(function()
   use 'christoomey/vim-tmux-navigator'
 
   use 'wbthomason/packer.nvim'
@@ -41,6 +41,14 @@ return require('packer').startup(function()
     requires = { { 'nvim-lua/plenary.nvim' }},
     config = function()
       vim.api.nvim_set_keymap('n', '<C-p>', [[<cmd>lua require('telescope.builtin').git_files()<CR>]], { noremap = true, silent = true })
+
+      function find_dotfile()
+        require("telescope.builtin").find_files({
+          cwd = "~/.dotfiles/",
+        })
+      end
+
+      vim.api.nvim_set_keymap('n', '<leader>td', [[<cmd>lua find_dotfile()<CR>]], { noremap = true, silent = true })
     end
   }
 
