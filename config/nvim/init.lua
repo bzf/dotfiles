@@ -1,8 +1,17 @@
+vim.g.mapleader = ' '
+
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.number = true
 vim.opt.relativenumber = true
+
+vim.api.nvim_set_keymap('n', '<leader>ve', ':edit $HOME/.config/nvim/init.lua<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>vE', ':tabedit $HOME/.config/nvim/init.lua<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>vs', ':source $HOME/.config/nvim/init.lua<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>w', ':write<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>q', ':quit<CR>', { noremap = true, silent = true })
 
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
