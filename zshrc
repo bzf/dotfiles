@@ -9,11 +9,11 @@ bindkey -e
 
 alias ..='cd ..'
 alias vim='nvim'
-alias r="$(rbenv which rails)"
+alias r="bundle exec rails"
 
 function rails() {
   echo "----> Use 'r' instead!"
-  "$(rbenv which rails)" "$@"
+  "bundle exec rails" "$@"
 }
 
 export PS1='%~ $ '
