@@ -35,6 +35,11 @@ require('packer').startup(function()
   use 'pbrisbin/vim-mkdir'
 
   use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
+  use {
     'nvim-telescope/telescope.nvim',
     requires = { { 'nvim-lua/plenary.nvim' }},
     config = function()
