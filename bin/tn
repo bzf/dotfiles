@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-COMMAND=$*
-
-eval "$COMMAND"
-terminal-notifier -sound default -message "$COMMAND"
