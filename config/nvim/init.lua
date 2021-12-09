@@ -50,6 +50,7 @@ require('packer').startup(function()
     },
   }
 
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {
     'nvim-telescope/telescope.nvim',
     requires = { { 'nvim-lua/plenary.nvim' }},
@@ -64,6 +65,8 @@ require('packer').startup(function()
       end
 
       vim.api.nvim_set_keymap('n', '<leader>ve', [[<cmd>lua find_dotfile()<CR>]], { noremap = true, silent = true })
+
+      require('telescope').load_extension('fzf')
     end
   }
 
