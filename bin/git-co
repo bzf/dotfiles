@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# This program acts as a wrapper around the `git-checkout` command and does a
+# few different things.
+#
+# 1. It will allow you to pass in either `main` or `master` and do the right
+# thing.
+# 2. It allows you to pass a branch name as normal, making it acts like a
+# simple alias.
+# 3. When not passing it any arguments, it'll get all the local branches, sort
+# them by committerdate and allow you to pick which one to checkout using
+# `fzf`.
+#
+# Since it's prefixed with `git-`, you can call this as `git co` (without the '-').
+
 if [[ $1 == "main" || $1 == "master" ]]; then
   git branch | grep -oE '^.{2}(main|master)$' | grep -oE 'main|master' | xargs git checkout
 elif [[ $# -gt 0 ]]; then
