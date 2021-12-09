@@ -32,3 +32,7 @@ elif read -q "REPLY?volta is missing. Install now? [y/N] "; then
   curl https://get.volta.sh | bash -s -- --skip-setup
   export PATH="$PATH:$HOME/.volta/bin"
 fi
+
+if [ -f "/usr/share/autojump/autojump.sh" ]; then
+   source /usr/share/autojump/autojump.sh
+fi
