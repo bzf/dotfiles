@@ -30,6 +30,7 @@ require('packer').startup(function()
 
   use 'wbthomason/packer.nvim'
 
+  use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-vinegar'
