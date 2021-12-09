@@ -1,3 +1,7 @@
+HISTFILE=~/.zsh_history
+HISTSIZE=20000
+SAVEHIST=20000
+
 bindkey -e
 
 alias vim='nvim'
@@ -31,6 +35,15 @@ elif read -q "REPLY?volta is missing. Install now? [y/N] "; then
   echo ''
   curl https://get.volta.sh | bash -s -- --skip-setup
   export PATH="$PATH:$HOME/.volta/bin"
+fi
+
+if [ -d "$HOME/.fzf/" ]; then
+  source "$HOME/.fzf/shell/key-bindings.zsh"
+elif read -q "REPLY?fzf is missing. Install now? [y/N] "; then
+  echo ''
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install --no-update-rc --no-completion --no-key-bindings
+  source "$HOME/.fzf/shell/key-bindings.zsh"
 fi
 
 if [ -f "/usr/share/autojump/autojump.sh" ]; then
