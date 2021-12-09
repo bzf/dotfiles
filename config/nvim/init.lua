@@ -164,6 +164,17 @@ require('packer').startup(function()
   }
 
   use {
+    'sbdchd/neoformat',
+    config = function()
+      vim.api.nvim_command([[
+      augroup fmt
+        autocmd BufWritePre *.js undojoin | Neoformat
+      augroup END
+      ]])
+    end
+  }
+
+  use {
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
