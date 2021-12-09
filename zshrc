@@ -55,6 +55,14 @@ elif read -q "REPLY?cargo is missing. Install now? [y/N] "; then
   source $HOME/.cargo/env
 fi
 
+if [ "$(command -v starship)" ]; then
+  eval "$(starship init zsh)"
+elif read -q "REPLY?starship is missing. Install now? [y/N] "; then
+  echo ''
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
+  eval "$(starship init zsh)"
+fi
+
 if [ -f "/usr/share/autojump/autojump.sh" ]; then
    source /usr/share/autojump/autojump.sh
 fi
