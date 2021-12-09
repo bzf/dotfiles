@@ -4,6 +4,7 @@ SAVEHIST=20000
 
 bindkey -e
 
+alias ..='cd ..'
 alias vim='nvim'
 
 export PS1='%~ $ '
