@@ -158,6 +158,13 @@ require('packer').startup(function()
   }
 
   use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
+  use {
     'tpope/vim-fugitive', 
     config = function()
       vim.api.nvim_set_keymap('n', '<leader>gs', ':Git<CR>', { noremap = true, silent = true })
