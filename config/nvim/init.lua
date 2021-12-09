@@ -51,6 +51,16 @@ require('packer').startup(function()
   }
 
   use {
+    'vim-test/vim-test',
+    config = function()
+      vim.api.nvim_set_keymap('n', '<leader>ta', ":TestSuite<CR>", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>tl', ":TestLast<CR>", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>tt', ":TestNearest<CR>", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>tT', ":TestFile<CR>", { noremap = true, silent = true })
+    end
+  }
+
+  use {
     'neovim/nvim-lspconfig',
     config = function()
       local nvim_lsp = require('lspconfig')
