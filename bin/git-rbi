@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Check for either a `main` or `master` branch and start an interactive rebase
+# against it.
+
+git fetch origin && git rebase -i origin/"$(git branch | grep -oE '^.{2}(main|master)$' | grep -oE 'main|master')"
