@@ -115,6 +115,8 @@ require('packer').startup(function()
     end
   }
 
+  use 'hrsh7th/vim-vsnip'
+
   use {
     'hrsh7th/nvim-cmp',
     requires = {
@@ -123,12 +125,17 @@ require('packer').startup(function()
       { 'hrsh7th/cmp-buffer' },
       { 'hrsh7th/cmp-path' },
       { 'hrsh7th/cmp-cmdline' },
-      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-vsnip' },
     },
     config = function()
       local cmp = require'cmp'
 
       cmp.setup({
+        snippet = {
+          expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+          end
+        },
         mapping = {
           ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
           ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
@@ -142,9 +149,9 @@ require('packer').startup(function()
         },
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
-        }, {
+          { name = 'vsnip' },
           { name = 'buffer' },
-        })
+        }),
       })
 
       cmp.setup.cmdline('/', {
