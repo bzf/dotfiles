@@ -1,2 +1,5 @@
 import:
   - ~/.config/alacritty/colors.yml
+
+font:
+  size: 15.5
