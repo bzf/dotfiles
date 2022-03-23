@@ -80,3 +80,16 @@ elif   [ -f /usr/local/etc/profile.d/autojump.sh ]; then
   source /usr/local/etc/profile.d/autojump.sh
 fi
 
+function archivebox() {
+  echo "Running archivebox in ~/.archivebox"
+
+  pushd ~/.archivebox
+
+	if [ "$1" = "open" ]; then
+		~/.bin/archivebox-open "$@"
+	else
+    command archivebox "$@"
+  fi
+
+  popd
+}

@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require "uri"
+
+uri = URI(ARGV.last)
+uri.query = nil
+
+# Check if it's already saved
+result = `command archivebox list | grep #{uri}`
+
+if result.strip == ""
+  `command archivebox add "#{uri}"`
+  result = `command archivebox list | grep #{uri}`
+end
+
+# Open with default HTML viewer
+`open #{result.split(" ").first}/singlefile.html`
