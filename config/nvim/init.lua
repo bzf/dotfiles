@@ -50,6 +50,7 @@ require('packer').startup(function()
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-vinegar'
   use 'pbrisbin/vim-mkdir'
+  use 'LnL7/vim-nix'
 
   use {
     'nvim-treesitter/nvim-treesitter',
