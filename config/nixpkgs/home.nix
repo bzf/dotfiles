@@ -13,9 +13,7 @@
     pkgs.htop
     pkgs.rbenv
     pkgs.ruby-build
-    pkgs.fzf
     pkgs.rustup
-    pkgs.autojump
     pkgs.rcm
   ];
 
@@ -89,4 +87,50 @@
       set -g status-style bg=colour240,fg=colour223
     '';
   };
+
+  programs.zsh = {
+    enable = true;
+
+    enableCompletion = false;
+    completionInit = true;
+    defaultKeymap = "emacs";
+
+    history = {
+      path = "~/.zsh_history";
+      size = 20000;
+      save = 20000;
+    };
+
+    shellAliases = {
+      ".." = "cd ..";
+      vim = "nvim";
+      be = "bundle exec";
+    };
+
+    initExtra = ''
+      function g() {
+        if [ "$#" -eq 0 ]; then
+          git status
+        else
+          git "$@"
+        fi
+      }
+
+      if [ -d "$HOME/.volta/" ]; then
+        export PATH="$PATH:$HOME/.volta/bin"
+      fi
+    '';
+
+    envExtra = ''
+      export EDITOR=nvim
+      export PATH="$PATH:$HOME/.bin"
+      export PATH="$PATH:$HOME/.local/bin"
+
+      . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+      . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+    '';
+  };
+
+  programs.autojump.enable = true;
+  programs.fzf.enable = true;
 }
