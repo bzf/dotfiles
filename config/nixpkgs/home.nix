@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.overlays = import ./overlays.nix;
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "andreligne";
@@ -9,6 +11,8 @@
   # Packages that should be installed to the user profile.
   home.packages = [
     pkgs.htop
+    pkgs.rbenv
+    pkgs.ruby-build
   ];
 
   # This value determines the Home Manager release that your
