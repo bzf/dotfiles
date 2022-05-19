@@ -15,6 +15,7 @@
     pkgs.ruby-build
     pkgs.rustup
     pkgs.rcm
+    pkgs.ripgrep
   ];
 
   # This value determines the Home Manager release that your
