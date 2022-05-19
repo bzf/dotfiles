@@ -14,7 +14,6 @@
     pkgs.rbenv
     pkgs.ruby-build
     pkgs.fzf
-    pkgs.starship
     pkgs.rustup
     pkgs.autojump
     pkgs.tmux
@@ -43,6 +42,13 @@
       push.default = "current";
       rebase.autoStash = true;
       rebase.autosquash = true;
+    };
+  };
+
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = false;
     };
   };
 }
