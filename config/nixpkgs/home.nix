@@ -32,4 +32,17 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.git = {
+    enable = true;
+    extraConfig = {
+      user.name = "André Ligné";
+      init.defaultBranch = "main";
+      alias.pf = "push --force-with-lease";
+      alias.pr = "pull --rebase";
+      push.default = "current";
+      rebase.autoStash = true;
+      rebase.autosquash = true;
+    };
+  };
 }
