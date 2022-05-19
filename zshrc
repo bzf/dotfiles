@@ -9,14 +9,7 @@ bindkey -e
 
 alias ..='cd ..'
 alias vim='nvim'
-alias r="bundle exec rails"
-
-function rails() {
-  echo "----> Use 'r' instead!"
-  "bundle exec rails" "$@"
-}
-
-export PS1='%~ $ '
+alias be="bundle exec"
 
 compdef g=git
 
