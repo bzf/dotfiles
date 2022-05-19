@@ -37,12 +37,7 @@ elif read -q "REPLY?volta is missing. Install now? [y/N] "; then
 fi
 
 eval "$(starship init zsh)"
-
-if [ -f "/usr/share/autojump/autojump.sh" ]; then
-  source /usr/share/autojump/autojump.sh
-elif   [ -f /usr/local/etc/profile.d/autojump.sh ]; then
-  source /usr/local/etc/profile.d/autojump.sh
-fi
+source "$HOME/.nix-profile/share/autojump/autojump.zsh"
 
 function archivebox() {
   echo "Running archivebox in ~/.archivebox"
