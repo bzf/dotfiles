@@ -17,6 +17,7 @@
     pkgs.starship
     pkgs.rustup
     pkgs.autojump
+    pkgs.tmux
   ];
 
   # This value determines the Home Manager release that your
