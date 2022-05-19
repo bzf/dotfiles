@@ -36,14 +36,6 @@ elif read -q "REPLY?volta is missing. Install now? [y/N] "; then
   export PATH="$PATH:$HOME/.volta/bin"
 fi
 
-if [ -d "$HOME/.cargo/" ]; then
-  source $HOME/.cargo/env
-elif read -q "REPLY?cargo is missing. Install now? [y/N] "; then
-  echo ''
-  curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
-  source $HOME/.cargo/env
-fi
-
 eval "$(starship init zsh)"
 
 if [ -f "/usr/share/autojump/autojump.sh" ]; then
