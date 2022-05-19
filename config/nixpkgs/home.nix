@@ -13,6 +13,7 @@
     pkgs.htop
     pkgs.rbenv
     pkgs.ruby-build
+    pkgs.fzf
   ];
 
   # This value determines the Home Manager release that your

@@ -36,15 +36,6 @@ elif read -q "REPLY?volta is missing. Install now? [y/N] "; then
   export PATH="$PATH:$HOME/.volta/bin"
 fi
 
-if [ -d "$HOME/.fzf/" ]; then
-  source "$HOME/.fzf/shell/key-bindings.zsh"
-elif read -q "REPLY?fzf is missing. Install now? [y/N] "; then
-  echo ''
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install --no-update-rc --no-completion --no-key-bindings
-  source "$HOME/.fzf/shell/key-bindings.zsh"
-fi
-
 if [ -d "$HOME/.cargo/" ]; then
   source $HOME/.cargo/env
 elif read -q "REPLY?cargo is missing. Install now? [y/N] "; then
