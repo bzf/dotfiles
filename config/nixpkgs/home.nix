@@ -14,6 +14,7 @@
     pkgs.rbenv
     pkgs.ruby-build
     pkgs.fzf
+    pkgs.starship
   ];
 
   # This value determines the Home Manager release that your
