@@ -16,6 +16,7 @@
     pkgs.fzf
     pkgs.rustup
     pkgs.autojump
+    pkgs.rcm
   ];
 
   # This value determines the Home Manager release that your
