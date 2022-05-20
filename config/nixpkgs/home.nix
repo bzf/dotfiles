@@ -16,6 +16,7 @@
     pkgs.rustup
     pkgs.rcm
     pkgs.ripgrep
+    pkgs.solargraph
   ];
 
   # This value determines the Home Manager release that your
