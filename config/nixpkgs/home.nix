@@ -56,6 +56,7 @@
 
     baseIndex = 1;
     escapeTime = 10;
+    keyMode = "vi";
 
     extraConfig = ''
       # Smart pane switching with awareness of Vim splits.
