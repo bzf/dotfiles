@@ -120,6 +120,8 @@
       if [ -d "$HOME/.volta/" ]; then
         export PATH="$PATH:$HOME/.volta/bin"
       fi
+
+      eval "$(rbenv init -)"
     '';
 
     envExtra = ''
