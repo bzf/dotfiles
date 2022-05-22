@@ -1,12 +1,21 @@
-{ config, pkgs, ... }:
+{ config, pkgs, stdenv, ... }:
 
+let
+  name = "André Ligné";
+  username = "andreligne";
+  homeDirectory =
+    if pkgs.stdenv.isDarwin then
+      "/Users/${username}"
+    else
+      "/home/${username}";
+in
 {
   nixpkgs.overlays = import ./overlays.nix;
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "andreligne";
-  home.homeDirectory = "/home/andreligne";
+  home.username = username;
+  home.homeDirectory = homeDirectory;
 
   # Packages that should be installed to the user profile.
   home.packages = [
@@ -36,7 +45,7 @@
   programs.git = {
     enable = true;
     extraConfig = {
-      user.name = "André Ligné";
+      user.name = name;
       init.defaultBranch = "main";
       alias.pf = "push --force-with-lease";
       alias.pr = "pull --rebase";
