@@ -15,6 +15,7 @@ vim.g.ale_linters = {ruby = {'standardrb'}}
 vim.g.ale_fixers = {
   ['*'] = {'remove_trailing_lines', 'trim_whitespace'},
   ruby = {'standardrb'},
+  rust = {'rustfmt'},
   typescript = {'prettier'},
   typescriptreact = {'prettier'}
 }
