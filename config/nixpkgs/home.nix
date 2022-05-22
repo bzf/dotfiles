@@ -17,6 +17,7 @@
     pkgs.rcm
     pkgs.ripgrep
     pkgs.solargraph
+    pkgs.rust-analyzer
   ];
 
   # This value determines the Home Manager release that your
