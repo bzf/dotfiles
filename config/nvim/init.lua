@@ -106,6 +106,9 @@ require('packer').startup(function()
     end
   }
 
+  use 'jiangmiao/auto-pairs'
+  use 'tpope/vim-endwise'
+
   use { 'dense-analysis/ale' }
 
   use {
