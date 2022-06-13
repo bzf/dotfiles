@@ -59,6 +59,23 @@ require('packer').startup(function()
   }
 
   use {
+    'ThePrimeagen/harpoon',
+    config = function()
+      vim.api.nvim_set_keymap('n', '<C-h>', [[<cmd>lua require('harpoon.ui').nav_file(1)<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<C-t>', [[<cmd>lua require('harpoon.ui').nav_file(2)<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<C-n>', [[<cmd>lua require('harpoon.ui').nav_file(3)<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<C-s>', [[<cmd>lua require('harpoon.ui').nav_file(4)<CR>]], { noremap = true, silent = true })
+
+      vim.api.nvim_set_keymap('n', '<leader>m', [[<cmd>lua require("harpoon.mark").add_file()<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<C-e>', [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>tc', [[<cmd>lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>]], { noremap = true, silent = true })
+    end,
+    requires = {
+      { 'nvim-lua/plenary.nvim' },
+    },
+  }
+
+  use {
     'kana/vim-textobj-indent',
     requires = {
       { 'kana/vim-textobj-user' },
