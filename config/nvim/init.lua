@@ -123,8 +123,14 @@ require('packer').startup(function()
     end
   }
 
-  use 'jiangmiao/auto-pairs'
   use 'tpope/vim-endwise'
+
+   use {
+     'windwp/nvim-autopairs',
+     config = function()
+       require('nvim-autopairs').setup{}
+     end
+   }
 
   use { 'dense-analysis/ale' }
 
