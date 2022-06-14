@@ -27,6 +27,8 @@ in
     pkgs.ripgrep
     pkgs.solargraph
     pkgs.rust-analyzer
+    pkgs.nodePackages.typescript-language-server
+    pkgs.elmPackages.elm-language-server
   ];
 
   # This value determines the Home Manager release that your

@@ -11,11 +11,12 @@ vim.opt.shiftwidth = 2
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.g.ale_linters = {ruby = {'standardrb'}}
+vim.g.ale_linters = {ruby = {'standardrb'}, elm = {'elm_ls'}}
 vim.g.ale_fixers = {
   ['*'] = {'remove_trailing_lines', 'trim_whitespace'},
   ruby = {'standardrb'},
   rust = {'rustfmt'},
+  elm = {'elm-format'},
   typescript = {'prettier'},
   typescriptreact = {'prettier'}
 }
@@ -120,6 +121,11 @@ require('packer').startup(function()
       vim.api.nvim_set_keymap('n', 'gy', '<Plug>(coc-type-definition)', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', 'gi', '<Plug>(coc-implementation)', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', 'gr', '<Plug>(coc-references)', { noremap = true, silent = true })
+
+      vim.g.coc_global_extensions = {
+        'coc-json',
+        'coc-tsserver'
+      }
     end
   }
 
