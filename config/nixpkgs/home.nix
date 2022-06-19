@@ -20,6 +20,7 @@ in
   # Packages that should be installed to the user profile.
   home.packages = [
     pkgs.htop
+    pkgs.watch
     pkgs.neovim
     pkgs.rbenv
     pkgs.ruby-build
