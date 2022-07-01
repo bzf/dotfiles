@@ -72,6 +72,7 @@ M.startup = function()
       end
     }
 
+    use 'neovim/nvim-lspconfig'
 
     use 'tpope/vim-endwise'
 
