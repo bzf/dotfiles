@@ -18,6 +18,7 @@ M.configure = function()
   require('lspconfig').tsserver.setup { on_attach = on_attach, capabilities = capabilities }
   require('lspconfig').rust_analyzer.setup { on_attach = on_attach, capabilities = capabilities }
   require('lspconfig').elmls.setup { on_attach = on_attach, capabilities = capabilities }
+  require('lspconfig').tailwindcss.setup { on_attach = on_attach, capabilities = capabilities }
 end
 
 return M
