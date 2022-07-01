@@ -74,6 +74,19 @@ M.startup = function()
 
     use 'neovim/nvim-lspconfig'
 
+    use {
+      'hrsh7th/nvim-cmp',
+      requires = {
+        { 'L3MON4D3/LuaSnip' },
+        { 'saadparwaiz1/cmp_luasnip' },
+        { 'onsails/lspkind.nvim' },
+      }
+    }
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-nvim-lua'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+
     use 'tpope/vim-endwise'
 
      use {

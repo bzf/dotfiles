@@ -1,6 +1,7 @@
 local M = {}
 
 require('bzf.packages').startup()
+require('bzf.completion').configure()
 require('bzf.lsp').configure()
 
 M.reload = function()
@@ -9,6 +10,7 @@ M.reload = function()
 
   require('bzf.packages').startup()
   require('bzf.packages').sync()
+  require('bzf.completion').configure()
   require('bzf.lsp').configure()
 
   vim.notify("module bzf reloaded!", vim.log.levels.INFO, {})

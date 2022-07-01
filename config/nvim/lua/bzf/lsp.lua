@@ -12,10 +12,12 @@ M.configure = function()
     vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, bufopts)
   end
 
-  require('lspconfig').solargraph.setup { on_attach = on_attach }
-  require('lspconfig').tsserver.setup { on_attach = on_attach }
-  require('lspconfig').rust_analyzer.setup { on_attach = on_attach }
-  require('lspconfig').elmls.setup { on_attach = on_attach }
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+  require('lspconfig').solargraph.setup { on_attach = on_attach, capabilities = capabilities }
+  require('lspconfig').tsserver.setup { on_attach = on_attach, capabilities = capabilities }
+  require('lspconfig').rust_analyzer.setup { on_attach = on_attach, capabilities = capabilities }
+  require('lspconfig').elmls.setup { on_attach = on_attach, capabilities = capabilities }
 end
 
 return M
