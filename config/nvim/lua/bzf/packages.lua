@@ -72,21 +72,6 @@ M.startup = function()
       end
     }
 
-    use {
-      'neoclide/coc.nvim',
-      branch = "release",
-      config = function()
-        vim.api.nvim_set_keymap('n', 'gd', '<Plug>(coc-definition)', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap('n', 'gy', '<Plug>(coc-type-definition)', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap('n', 'gi', '<Plug>(coc-implementation)', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap('n', 'gr', '<Plug>(coc-references)', { noremap = true, silent = true })
-
-        vim.g.coc_global_extensions = {
-          'coc-json',
-          'coc-tsserver'
-        }
-      end
-    }
 
     use 'tpope/vim-endwise'
 
