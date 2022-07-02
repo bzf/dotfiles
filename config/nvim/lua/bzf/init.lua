@@ -9,11 +9,15 @@ M.reload = function()
   require('bzf')
 
   require('bzf.packages').startup()
-  require('bzf.packages').sync()
   require('bzf.completion').configure()
   require('bzf.lsp').configure()
 
   vim.notify("module bzf reloaded!", vim.log.levels.INFO, {})
 end
 
-vim.keymap.set('n', '<leader>r', M.reload)
+M.sync = function()
+  require('bzf.packages').sync()
+end
+
+vim.keymap.set('n', '<leader>vr', M.reload)
+vim.keymap.set('n', '<leader>vs', M.sync)
