@@ -1,5 +1,7 @@
 local M = {}
 
+local rails = require('bzf.snippets.rails')
+
 M.configure = function()
   local ls = require"luasnip"
 
@@ -29,8 +31,10 @@ M.configure = function()
     end
   end)
 
-  ls.add_snippets("all", {
-    ls.parser.parse_snippet("test", "-- this is what was expandend")
+  local s = ls.snippet
+
+  ls.add_snippets("ruby", {
+    s("class", rails.class_definition),
   })
 end
 
