@@ -1,6 +1,7 @@
 local M = {}
 
 require('bzf.packages').startup()
+require('bzf.snippets').configure()
 require('bzf.completion').configure()
 require('bzf.lsp').configure()
 
@@ -9,6 +10,7 @@ M.reload = function()
   require('bzf')
 
   require('bzf.packages').startup()
+  require('bzf.snippets').configure()
   require('bzf.completion').configure()
   require('bzf.lsp').configure()
 
