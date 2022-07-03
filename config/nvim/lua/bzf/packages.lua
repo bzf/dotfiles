@@ -110,6 +110,11 @@ M.startup = function()
     }
 
     use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = false },
+    }
+
+    use {
       'tpope/vim-fugitive',
       config = function()
         vim.api.nvim_set_keymap('n', '<leader>gs', ':Git<CR>', { noremap = true, silent = true })
