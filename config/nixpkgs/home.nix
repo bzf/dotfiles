@@ -145,6 +145,11 @@ in
       export PATH="$PATH:$HOME/.bin"
       export PATH="$PATH:$HOME/.local/bin"
 
+      if [ -d "/opt/homebrew" ]; then
+        export PATH="/opt/homebrew/bin:$PATH"
+        export PATH="/opt/homebrew/sbin:$PATH"
+      fi
+
       . "$HOME/.nix-profile/etc/profile.d/nix.sh"
     '';
   };
