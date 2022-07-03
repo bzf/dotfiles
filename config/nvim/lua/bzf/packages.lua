@@ -134,6 +134,9 @@ M.startup = function()
   end)
 end
 
-M.sync = require('packer').sync
+M.sync = function()
+  require('packer').sync()
+  require('packer').compile()
+end
 
 return M;
