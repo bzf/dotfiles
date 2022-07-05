@@ -1,10 +1,7 @@
-#!/bin/sh
-#
-# Attach or create tmux session named the same as current directory.
-# https://github.com/thoughtbot/dotfiles/blob/dbb2a3dc51c20389056d906a1d55fc648bf73de4/bin/tat
+#!/usr/bin/env bash
 
-path_name="$(basename "$PWD" | tr . -)"
-session_name=${1-$path_name}
+path_name="$(find ~/dev ~/projects -mindepth 1 -maxdepth 1 -type d | fzf)"
+session_name="$(basename "$path_name" | tr . _)"
 
 not_in_tmux() {
   [ -z "$TMUX" ]
@@ -15,12 +12,12 @@ session_exists() {
 }
 
 create_detached_session() {
-  (TMUX='' tmux new-session -Ad -s "$session_name")
+  (TMUX='' tmux new-session -Ad -s "$session_name" -c "$path_name")
 }
 
 create_if_needed_and_attach() {
   if not_in_tmux; then
-    tmux -u new-session -As "$session_name"
+    tmux -u new-session -As "$session_name" -c "$path_name"
   else
     if ! session_exists; then
       create_detached_session
