@@ -28,6 +28,8 @@ local get_parent_class = f(function(arg, parent)
     return "ApplicationController"
   elseif directory_name == "models" then
     return "ApplicationRecord"
+  elseif directory_name == "components" then
+    return "ViewComponent::Base"
   else
     return directory_name
   end
