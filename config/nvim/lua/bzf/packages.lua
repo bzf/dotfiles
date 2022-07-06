@@ -49,7 +49,9 @@ M.startup = function()
         { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
       },
       config = function()
-        vim.keymap.set('n', '<C-p>', require('telescope.builtin').git_files, { noremap = true, silent = true })
+        vim.keymap.set('n', '<C-p>', function()
+          require('telescope.builtin').git_files { show_untracked = true }
+        end, { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { noremap = true, silent = true })
 
         function find_dotfile()
