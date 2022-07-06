@@ -138,6 +138,8 @@ in
       fi
 
       eval "$(rbenv init -)"
+
+      bindkey -s "^F" "tat\n"
     '';
 
     envExtra = ''
