@@ -110,7 +110,7 @@ in
 
     enableCompletion = false;
     completionInit = true;
-    defaultKeymap = "emacs";
+    defaultKeymap = "vicmd";
 
     history = {
       path = "~/.zsh_history";
