@@ -140,6 +140,10 @@ in
       eval "$(rbenv init -)"
 
       bindkey -s "^F" "tat\n"
+      bindkey "^P" up-line-or-history
+      bindkey "^N" down-line-or-history
+      bindkey "^A" beginning-of-line
+      bindkey "^E" end-of-line
     '';
 
     envExtra = ''
