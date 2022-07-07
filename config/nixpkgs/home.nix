@@ -151,6 +151,10 @@ in
       export PATH="$PATH:$HOME/.bin"
       export PATH="$PATH:$HOME/.local/bin"
 
+      if [ $(command -v nproc) ]; then
+        export MAKEFLAGS="-j$(($(nproc) / 2))"
+      fi
+
       if [ -d "/opt/homebrew" ]; then
         export PATH="/opt/homebrew/bin:$PATH"
         export PATH="/opt/homebrew/sbin:$PATH"
