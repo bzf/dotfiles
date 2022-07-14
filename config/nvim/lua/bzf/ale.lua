@@ -6,6 +6,7 @@ M.configure = function()
     ['*'] = {'remove_trailing_lines', 'trim_whitespace'},
     ruby = {'standardrb'},
     eruby = {'erblint'},
+    dart = {'dart-format'},
     rust = {'rustfmt'},
     elm = {'elm-format'},
     javascript = {'prettier'},
