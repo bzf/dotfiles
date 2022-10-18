@@ -10,6 +10,7 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.mouse = nil
 
 vim.api.nvim_set_keymap('n', '<leader>vs', ':source $HOME/.config/nvim/init.lua<CR>', { noremap = true, silent = true })
 
