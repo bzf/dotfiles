@@ -8,9 +8,15 @@ defaultBranch = main
 pf = push --force-with-lease
 pr = pull --rebase
 
+[commit]
+template = ~/.config/git/message
+
 [push]
 default = current
 
 [rebase]
 autoStash = true
 autosquash = true
+
+; [diff]
+; external = difft
