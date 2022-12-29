@@ -43,5 +43,7 @@ export PATH="$PATH:$HOME/.rbenv/bin"
 eval "$(starship init zsh)"
 eval "$(rbenv init - zsh)"
 source "$HOME/.cargo/env"
-source /etc/profile.d/autojump.sh
-source /usr/share/autojump/autojump.zsh
+
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+[ -f /usr/share/autojump/autojump.zsh ] && . /usr/share/autojump/autojump.zsh
+[ -f /etc/profile.d/autojump.sh ] && . /etc/profile.d/autojump.sh
