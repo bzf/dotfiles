@@ -9,6 +9,7 @@ M.configure = function()
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 
     vim.keymap.set('n', 'cr', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', 'cr', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, bufopts)
   end
 

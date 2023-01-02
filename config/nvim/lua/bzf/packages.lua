@@ -76,7 +76,30 @@ M.startup = function()
       end
     }
 
-    use 'neovim/nvim-lspconfig'
+    use {
+      'neovim/nvim-lspconfig',
+      requires = {
+        {"williamboman/mason.nvim"},
+        {"williamboman/mason-lspconfig.nvim"},
+        {"neovim/nvim-lspconfig"},
+      },
+      config = function()
+        require("mason").setup()
+        require("mason-lspconfig").setup {
+          ensure_installed = {
+            "sumneko_lua",
+            "solargraph",
+            "rust_analyzer",
+            "tailwindcss",
+            "tsserver",
+            "sorbet",
+            "dartls",
+          },
+        }
+
+        require('bzf.lsp').configure()
+      end
+    }
 
     use {
       'hrsh7th/nvim-cmp',
