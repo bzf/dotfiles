@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Print the primary (main or master) branch of a git repository
+
+echo $(git branch | grep -oE '^.{2}(main|master)$' |  grep -oE 'main|master')
