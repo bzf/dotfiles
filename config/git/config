@@ -7,6 +7,7 @@ defaultBranch = main
 [alias]
 pf = push --force-with-lease
 pr = pull --rebase
+rba = rebase --abort
 
 [commit]
 template = ~/.config/git/message
