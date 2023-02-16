@@ -11,6 +11,7 @@ rba = rebase --abort
 
 [commit]
 template = ~/.config/git/message
+verbose = true
 
 [push]
 default = current
