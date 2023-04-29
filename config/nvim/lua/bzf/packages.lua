@@ -87,13 +87,10 @@ M.startup = function()
         require("mason").setup()
         require("mason-lspconfig").setup {
           ensure_installed = {
-            "sumneko_lua",
             "solargraph",
             "rust_analyzer",
             "tailwindcss",
             "tsserver",
-            "sorbet",
-            "dartls",
           },
         }
 
