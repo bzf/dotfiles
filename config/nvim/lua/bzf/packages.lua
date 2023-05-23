@@ -85,41 +85,30 @@ M.startup = function()
     }
 
     use {
-      'neovim/nvim-lspconfig',
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v2.x',
       requires = {
-        {"williamboman/mason.nvim"},
-        {"williamboman/mason-lspconfig.nvim"},
-        {"neovim/nvim-lspconfig"},
+        { 'neovim/nvim-lspconfig' },
+        { 'williamboman/mason.nvim'},
+        { 'williamboman/mason-lspconfig.nvim' },
+        { 'hrsh7th/nvim-cmp' },
+        { 'hrsh7th/cmp-nvim-lsp' },
+        { 'L3MON4D3/LuaSnip' },
+        { 'hrsh7th/cmp-path' },
+        { 'hrsh7th/cmp-buffer' },
       },
       config = function()
-        require("mason").setup()
-        require("mason-lspconfig").setup {
-          ensure_installed = {
-            "solargraph",
-            "rust_analyzer",
-            "tailwindcss",
-            "tsserver",
-          },
-        }
+        local lsp = require('lsp-zero').preset({})
 
-        require('bzf.lsp').configure()
+        lsp.on_attach(function(client, bufnr)
+          lsp.default_keymaps({buffer = bufnr})
+        end)
+
+        lsp.setup()
       end
     }
 
-    use {
-      'hrsh7th/nvim-cmp',
-      requires = {
-        { 'L3MON4D3/LuaSnip' },
-        { 'saadparwaiz1/cmp_luasnip' },
-        { 'onsails/lspkind.nvim' },
-      }
-    }
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-nvim-lua'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-
-    use 'L3MON4D3/LuaSnip'
+    use 'onsails/lspkind.nvim'
 
     use 'tpope/vim-endwise'
 
