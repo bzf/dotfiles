@@ -26,7 +26,6 @@ M.startup = function()
     use 'tpope/vim-unimpaired'
     use 'tpope/vim-vinegar'
     use 'pbrisbin/vim-mkdir'
-    use 'LnL7/vim-nix'
 
     use { 'nvim-lua/plenary.nvim' }
 
