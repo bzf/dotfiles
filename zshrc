@@ -48,3 +48,5 @@ source "$HOME/.cargo/env"
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 [ -f /usr/share/autojump/autojump.zsh ] && . /usr/share/autojump/autojump.zsh
 [ -f /etc/profile.d/autojump.sh ] && . /etc/profile.d/autojump.sh
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
