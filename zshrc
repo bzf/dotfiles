@@ -47,6 +47,7 @@ source "$HOME/.cargo/env"
 [ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 [ -f /usr/share/autojump/autojump.zsh ] && . /usr/share/autojump/autojump.zsh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 [ -f /etc/profile.d/autojump.sh ] && . /etc/profile.d/autojump.sh
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
