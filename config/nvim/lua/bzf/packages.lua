@@ -146,7 +146,12 @@ M.startup = function()
                 buffer = bufnr,
                 callback = function()
                   -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                  vim.lsp.buf.format({ bufnr = bufnr })
+                  vim.lsp.buf.format({
+                    bufnr = bufnr,
+                    filter = function(client)
+                      return client.name ~= "solargraph"
+                    end
+                  })
                   -- vim.lsp.buf.formatting_sync()
                 end,
               })
