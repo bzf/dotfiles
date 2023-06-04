@@ -124,16 +124,13 @@ M.startup = function()
       config = function()
         local null_ls = require("null-ls")
 
-
         null_ls.setup({
           sources = {
             null_ls.builtins.diagnostics.erb_lint,
-            -- null_ls.builtins.diagnostics.standardrb,
 
             null_ls.builtins.formatting.trim_newlines,
             null_ls.builtins.formatting.trim_whitespace,
             null_ls.builtins.formatting.prettier,
-            null_ls.builtins.formatting.standardrb,
             null_ls.builtins.formatting.rustfmt,
           },
 
