@@ -112,8 +112,8 @@ M.startup = function()
             timeout_ms = 10000,
           },
           servers = {
-            ['solargraph'] = {},
-            ['null-ls'] = {'javascript', 'typescript', 'lua', 'ruby', 'eruby'},
+            ['standardrb'] = {'ruby'},
+            ['null-ls'] = {'javascript', 'typescript', 'lua', 'eruby'},
           }
         })
 
