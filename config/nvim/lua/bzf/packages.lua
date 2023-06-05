@@ -96,6 +96,8 @@ M.startup = function()
         { 'L3MON4D3/LuaSnip' },
         { 'hrsh7th/cmp-path' },
         { 'hrsh7th/cmp-buffer' },
+        { "nvim-lua/plenary.nvim" },
+        { "jose-elias-alvarez/null-ls.nvim" },
       },
       config = function()
         local lsp = require('lsp-zero').preset({})
@@ -104,7 +106,31 @@ M.startup = function()
           lsp.default_keymaps({buffer = bufnr})
         end)
 
+        lsp.format_on_save({
+          format_opts = {
+            async = false,
+            timeout_ms = 10000,
+          },
+          servers = {
+            ['solargraph'] = {},
+            ['null-ls'] = {'javascript', 'typescript', 'lua', 'ruby', 'eruby'},
+          }
+        })
+
         lsp.setup()
+
+        local null_ls = require("null-ls")
+
+        null_ls.setup({
+          sources = {
+            null_ls.builtins.diagnostics.erb_lint,
+
+            null_ls.builtins.formatting.trim_newlines,
+            null_ls.builtins.formatting.trim_whitespace,
+            null_ls.builtins.formatting.prettier,
+            null_ls.builtins.formatting.rustfmt,
+          },
+        })
       end
     }
 
@@ -118,46 +144,6 @@ M.startup = function()
          require('nvim-autopairs').setup{}
        end
      }
-
-    use({
-      "jose-elias-alvarez/null-ls.nvim",
-      config = function()
-        local null_ls = require("null-ls")
-
-        null_ls.setup({
-          sources = {
-            null_ls.builtins.diagnostics.erb_lint,
-
-            null_ls.builtins.formatting.trim_newlines,
-            null_ls.builtins.formatting.trim_whitespace,
-            null_ls.builtins.formatting.prettier,
-            null_ls.builtins.formatting.rustfmt,
-          },
-
-          -- you can reuse a shared lspconfig on_attach callback here
-          on_attach = function(client, bufnr)
-            if client.supports_method("textDocument/formatting") then
-              vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-              vim.api.nvim_create_autocmd("BufWritePre", {
-                group = augroup,
-                buffer = bufnr,
-                callback = function()
-                  -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                  vim.lsp.buf.format({
-                    bufnr = bufnr,
-                    filter = function(client)
-                      return client.name ~= "solargraph"
-                    end
-                  })
-                  -- vim.lsp.buf.formatting_sync()
-                end,
-              })
-            end
-          end,
-        })
-      end,
-      requires = { "nvim-lua/plenary.nvim" },
-    })
 
     use {
       'numToStr/Comment.nvim',
