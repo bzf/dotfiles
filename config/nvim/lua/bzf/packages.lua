@@ -134,6 +134,13 @@ M.startup = function()
       end
     }
 
+    use {
+      'j-hui/fidget.nvim',
+      config = function()
+        require"fidget".setup {}
+      end
+    }
+
     use 'onsails/lspkind.nvim'
 
     use 'tpope/vim-endwise'
