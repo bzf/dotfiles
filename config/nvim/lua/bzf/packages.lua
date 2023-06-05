@@ -124,6 +124,7 @@ M.startup = function()
         null_ls.setup({
           sources = {
             null_ls.builtins.diagnostics.erb_lint,
+            null_ls.builtins.diagnostics.eslint,
 
             null_ls.builtins.formatting.trim_newlines,
             null_ls.builtins.formatting.trim_whitespace,
