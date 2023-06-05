@@ -93,7 +93,9 @@ M.startup = function()
         { 'williamboman/mason-lspconfig.nvim' },
         { 'hrsh7th/nvim-cmp' },
         { 'hrsh7th/cmp-nvim-lsp' },
+        { 'saadparwaiz1/cmp_luasnip' },
         { 'L3MON4D3/LuaSnip' },
+        { 'onsails/lspkind.nvim' },
         { 'hrsh7th/cmp-path' },
         { 'hrsh7th/cmp-buffer' },
         { "nvim-lua/plenary.nvim" },
@@ -133,12 +135,71 @@ M.startup = function()
           },
         })
 
-        -- Pre-select the first item in the completion menu
         local cmp = require('cmp')
+        local cmp_action = require('lsp-zero').cmp_action()
+
+        cmp.setup({
+          sources = {
+            {name = 'path'},
+            {name = 'nvim_lsp'},
+            {name = 'buffer', keyword_length = 3},
+            {name = 'luasnip', keyword_length = 2},
+          },
+          mapping = {
+            ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+            ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+          }
+        })
+
+        -- Pre-select the first item in the completion menu
         cmp.setup({
           preselect = 'item',
           completion = {
             completeopt = 'menu,menuone,noinsert'
+          },
+        })
+
+        local lspkind = require('lspkind')
+        lspkind.init()
+
+        cmp.setup({
+          mapping = cmp.mapping.preset.insert({
+            ["<C-y>"] = cmp.mapping.confirm {
+              behavior = cmp.ConfirmBehavior.Insert,
+              select = true,
+            },
+          }),
+
+          sources = cmp.config.sources({
+            { name = 'nvim_lsp' },
+            { name = 'nvim_lua' },
+            { name = 'luasnip' },
+            { name = 'path' },
+          }, {
+            { name = 'buffer' },
+          }),
+
+          snippet = {
+            expand = function(args)
+              require('luasnip').lsp_expand(args.body)
+            end,
+          },
+
+          formatting = {
+            format = lspkind.cmp_format {
+              with_text = true,
+              mode = 'text',
+              menu = {
+                buffer = "[buf]",
+                nvim_lsp = "[LSP]",
+                nvim_lua = "[lua]",
+                path = "[path]",
+              },
+            },
+          },
+
+          experimental = {
+            ghost_text = true,
           },
         })
       end
@@ -150,8 +211,6 @@ M.startup = function()
         require"fidget".setup {}
       end
     }
-
-    use 'onsails/lspkind.nvim'
 
     use 'tpope/vim-endwise'
 
