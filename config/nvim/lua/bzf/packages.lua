@@ -132,6 +132,15 @@ M.startup = function()
             null_ls.builtins.formatting.rustfmt,
           },
         })
+
+        -- Pre-select the first item in the completion menu
+        local cmp = require('cmp')
+        cmp.setup({
+          preselect = 'item',
+          completion = {
+            completeopt = 'menu,menuone,noinsert'
+          },
+        })
       end
     }
 
