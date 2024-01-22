@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+if [ ! $# -eq 1 ]; then
+  echo "Example usage: epoch 1705681169"
+fi
+
+date -r $1
