@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -z $1 ]; then
-  path_name="$(find ~/dev ~/projects ~/work ~/ -mindepth 1 -maxdepth 1 -type d | fzf)"
+  path_name="$(find ~/dev ~/projects ~/work ~/ ~/tilo -mindepth 1 -maxdepth 1 -type d | fzf)"
 else
   path_name="$1"
 fi
