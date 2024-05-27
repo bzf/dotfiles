@@ -1,0 +1,4 @@
+import = ["/Users/andreligne/.config/alacritty/colors.toml"]
+
+[font]
+size = 16
