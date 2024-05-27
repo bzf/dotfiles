@@ -11,3 +11,7 @@ elif sysctl -n hw.ncpu &>/dev/null; then
 fi
 
 export MAKEFLAGS="-j`expr $CPU_COUNT - 1`"
+
+export PATH="/opt/homebrew/opt/dotnet@6/bin:$PATH"
+export PATH="/opt/homebrew/Cellar/postgresql@15/15.3_2/bin:$PATH"
+

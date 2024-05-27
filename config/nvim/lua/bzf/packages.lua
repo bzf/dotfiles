@@ -35,7 +35,12 @@ M.startup = function()
       config = function()
         require'nvim-treesitter.configs'.setup {
           -- A list of parser names, or "all" (the five listed parsers should always be installed)
-          ensure_installed = {"ruby", "javascript", "rust"},
+          ensure_installed = {"ruby", "javascript", "rust", "swift", "tsx", "typescript", "css", "astro"},
+            -- ensure_installed = {'astro', 'tsx', 'typescript', 'html'},
+            auto_install = true,
+            highlight = {
+              enable = true
+            }
 
           -- Install parsers synchronously (only applied to `ensure_installed`)
           -- sync_install = false,
@@ -115,7 +120,9 @@ M.startup = function()
           },
           servers = {
             ['standardrb'] = {'ruby'},
-            ['null-ls'] = {'javascript', 'typescript', 'lua', 'eruby'},
+            ['sourcekit-lsp'] = {'swift'},
+            ['rustfmt'] = {'rust'},
+            ['null-ls'] = {'javascript', 'typescript', 'rust', 'ruby', 'lua', 'eruby', 'astro', 'c'},
           }
         })
 
@@ -132,6 +139,7 @@ M.startup = function()
             null_ls.builtins.formatting.trim_whitespace,
             null_ls.builtins.formatting.prettier,
             null_ls.builtins.formatting.rustfmt,
+            null_ls.builtins.formatting.clang_format,
           },
         })
 
@@ -266,6 +274,23 @@ M.startup = function()
       config = function()
         vim.cmd[[colorscheme gruvbox]]
       end
+    }
+
+    use {
+      "wojciech-kulik/xcodebuild.nvim",
+      requires = {
+        { "nvim-telescope/telescope.nvim"},
+        { "MunifTanjim/nui.nvim"},
+        -- "nvim-tree/nvim-tree.lua", -- (optional) to manage project files
+        -- "stevearc/oil.nvim", -- (optional) to manage project files
+        -- "nvim-treesitter/nvim-treesitter", -- (optional) for Quick tests support (required Swift parser)
+      },
+      config = function()
+        require("xcodebuild").setup({
+          -- put some options here or leave it empty to use default settings
+          vim.keymap.set("n", "<leader>xr", "<cmd>XcodebuildBuildRun<cr>", { desc = "Build & Run Project" })
+        })
+      end,
     }
 
     if packer_bootstrap then

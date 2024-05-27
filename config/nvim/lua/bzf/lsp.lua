@@ -15,12 +15,14 @@ M.configure = function()
 
   local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+  require('lspconfig').clangd.setup { on_attach = on_attach, capabilities = capabilities }
   require('lspconfig').solargraph.setup { on_attach = on_attach, capabilities = capabilities }
   require('lspconfig').tsserver.setup { on_attach = on_attach, capabilities = capabilities }
   require('lspconfig').rust_analyzer.setup { on_attach = on_attach, capabilities = capabilities }
   require('lspconfig').elmls.setup { on_attach = on_attach, capabilities = capabilities }
   require('lspconfig').tailwindcss.setup { on_attach = on_attach, capabilities = capabilities }
   require('lspconfig').dartls.setup { on_attach = on_attach, capabilities = capabilities }
+  require('lspconfig').astro.astro { on_attach = on_attach, capabilities = capabilities }
 end
 
 return M
