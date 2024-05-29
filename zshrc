@@ -5,6 +5,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=20000
 SAVEHIST=20000
 
+setopt HIST_IGNORE_SPACE
+
 if [ -d /opt/homebrew ]; then
   export PATH="/opt/homebrew/bin:$PATH"
   export PATH="/opt/homebrew/sbin:$PATH"
