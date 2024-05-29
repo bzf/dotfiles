@@ -854,6 +854,22 @@ require("lazy").setup({
 	},
 
 	{
+		"vim-test/vim-test",
+		cmd = {
+			"TestSuite",
+			"TestLast",
+			"TestNearest",
+			"TestFile",
+		},
+		keys = {
+			{ "<leader>ta", "<cmd>:TestSuite<CR>" },
+			{ "<leader>tl", "<cmd>:TestLast<CR>" },
+			{ "<leader>tt", "<cmd>:TestNearest<CR>" },
+			{ "<leader>tT", "<cmd>:TestFile<CR>" },
+		},
+	},
+
+	{
 		"kylechui/nvim-surround",
 		version = "2.1.8", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
