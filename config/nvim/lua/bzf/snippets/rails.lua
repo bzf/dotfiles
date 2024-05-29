@@ -32,6 +32,8 @@ local get_parent_class = f(function(arg, parent)
     return "ApplicationPolicy"
   elseif directory_name == "jobs" then
     return "ApplicationJob"
+  elseif directory_name == "notifiers" then
+    return "ApplicationNotifier"
   elseif directory_name == "components" then
     return "ViewComponent::Base"
   else
