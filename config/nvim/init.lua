@@ -565,6 +565,7 @@ require("lazy").setup({
 				-- But for many setups, the LSP (`tsserver`) will work just fine
 				-- tsserver = {},
 				--
+				solargraph = {},
 
 				lua_ls = {
 					-- cmd = {...},
@@ -640,6 +641,7 @@ require("lazy").setup({
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
+				ruby = { "standardrb" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
