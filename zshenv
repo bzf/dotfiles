@@ -11,3 +11,5 @@ elif sysctl -n hw.ncpu &>/dev/null; then
 fi
 
 export MAKEFLAGS="-j`expr $CPU_COUNT - 1`"
+
+[ -f ~/.zshenv.local ] && source ~/.zshenv.local

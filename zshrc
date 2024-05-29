@@ -53,3 +53,5 @@ source "$HOME/.cargo/env"
 [ -f /etc/profile.d/autojump.sh ] && . /etc/profile.d/autojump.sh
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
