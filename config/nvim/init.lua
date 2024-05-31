@@ -391,6 +391,9 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>sd", function()
 				builtin.find_files({ cwd = "~/.dotfiles" })
 			end, { desc = "[S]earch [D]otfiles" })
+
+			-- Shortcut for searching commands
+			vim.keymap.set("n", "<leader>sc", builtin.commands, { desc = "[S]earch [C]ommands" })
 		end,
 	},
 
