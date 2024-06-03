@@ -899,16 +899,7 @@ require("lazy").setup({
 		},
 	},
 
-	{
-		"kylechui/nvim-surround",
-		version = "2.1.8", -- Use for stability; omit to use `main` branch for the latest features
-		event = "VeryLazy",
-		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
-		end,
-	},
+	{ "tpope/vim-surround" },
 
 	{ "tpope/vim-vinegar" },
 
