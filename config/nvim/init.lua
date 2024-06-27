@@ -904,6 +904,18 @@ require("lazy").setup({
 		},
 	},
 
+	{
+		"mbbill/undotree",
+		keys = {
+			{
+				"<leader>u",
+				vim.cmd.UndotreeToggle,
+				mode = "",
+				desc = "Toggle [U]ndotree",
+			},
+		},
+	},
+
 	{ "tpope/vim-surround" },
 
 	{ "tpope/vim-vinegar" },
