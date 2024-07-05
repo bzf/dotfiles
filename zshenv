@@ -2,7 +2,7 @@ export EDITOR=nvim
 
 export PATH="$PATH:$HOME/.bin"
 export PATH="$PATH:$HOME/.local/bin"
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo.env" ] && . "$HOME/.cargo/env"
 
 if command -v nproc &>/dev/null; then
   export CPU_COUNT=$(nproc)
