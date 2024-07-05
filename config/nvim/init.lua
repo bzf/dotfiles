@@ -392,6 +392,11 @@ require("lazy").setup({
 				builtin.find_files({ cwd = "~/.dotfiles" })
 			end, { desc = "[S]earch [D]otfiles" })
 
+			-- Shortcut for searching your nix configuration files
+			vim.keymap.set("n", "<leader>sn", function()
+				builtin.find_files({ cwd = "~/nix" })
+			end, { desc = "[S]earch [N]ix files" })
+
 			-- Shortcut for searching commands
 			vim.keymap.set("n", "<leader>sc", builtin.commands, { desc = "[S]earch [C]ommands" })
 		end,
