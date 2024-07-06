@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This program acts as a wrapper around the `git-checkout` command and does a
 # few different things.
