@@ -595,9 +595,8 @@ require("lazy").setup({
 			}
 
 			-- LSP servers that should not be managed by Mason.
-			require("lspconfig").sourcekit.setup({
-				capabilities = capabilities,
-			})
+			require("lspconfig").sourcekit.setup({ capabilities = capabilities })
+			require("lspconfig").standardrb.setup({ capabilities = capabilities })
 
 			-- Ensure the servers and tools above are installed
 			--  To check the current status of installed tools and/or manually install
@@ -657,7 +656,6 @@ require("lazy").setup({
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
-				ruby = { "standardrb" },
 				javascript = { "prettier" },
 				json = { "prettier" },
 				-- Conform can also run multiple formatters sequentially
