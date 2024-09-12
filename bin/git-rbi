@@ -3,4 +3,4 @@
 # Check for either a `main` or `master` branch and start an interactive rebase
 # against it.
 
-git fetch origin && git rebase -i origin/"$(git main-branch)" $@
+git fetch origin && git rebase -i origin/"$(git main-branch)" "$@"
