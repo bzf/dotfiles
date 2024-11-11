@@ -18,6 +18,7 @@ bindkey -e
 alias ..='cd ..'
 alias vim='nvim'
 alias be="bundle exec"
+alias cat="bat"
 
 compdef g=git
 

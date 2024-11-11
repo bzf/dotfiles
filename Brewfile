@@ -7,5 +7,6 @@ brew "neovim"
 brew "autojump"
 brew "ripgrep"
 brew "starship"
+brew "bat"
 
 cask "alacritty"
