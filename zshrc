@@ -1,4 +1,5 @@
 autoload -U compinit
+autoload -U edit-command-line
 compinit
 
 HISTFILE=~/.zsh_history
@@ -53,5 +54,8 @@ eval "$(rbenv init - zsh)"
 [ -f /etc/profile.d/autojump.sh ] && . /etc/profile.d/autojump.sh
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
